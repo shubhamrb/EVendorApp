@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:padding="@dimen/Margin5dp"
+    android:elevation="@dimen/Margin5dp"
+    android:id="@+id/cardView"
+    android:layout_margin="@dimen/Margin5dp"
+    app:contentPadding="@dimen/Margin5dp"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/Margin5dp"
+    android:layout_height="wrap_content">
+   <androidx.appcompat.widget.LinearLayoutCompat
+       android:layout_width="match_parent"
+       android:orientation="horizontal"
+       android:weightSum="2"
+       android:layout_height="wrap_content">
+       <com.google.android.material.textview.MaterialTextView
+           android:layout_width="match_parent"
+           android:text="Service item"
+           android:id="@+id/tvCat"
+           android:layout_gravity="start"
+           android:gravity="start|center"
+           android:layout_weight="1"
+           android:layout_marginStart="@dimen/Margin5dp"
+           android:fontFamily="@font/poppins"
+
+           android:textColor="@color/g_black"
+
+           android:layout_height="wrap_content"/>
+       <com.google.android.material.textview.MaterialTextView
+           android:layout_width="match_parent"
+           android:text="Service item"
+           android:id="@+id/activeStatus"
+           android:layout_gravity="end"
+           android:gravity="end"
+           android:layout_weight="1"
+           android:layout_marginStart="@dimen/Margin5dp"
+           android:fontFamily="@font/poppins"
+
+           android:textColor="@color/g_black"
+
+           android:layout_height="wrap_content"/>
+
+   </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:weightSum="5"
+        android:layout_margin="@dimen/Margin5dp"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_weight="4.5"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="20sp"
+                android:background="@drawable/green_gredient_bg"
+                android:layout_height="20sp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:text="Service item"
+                android:id="@+id/tvName"
+                android:layout_gravity="start"
+                android:gravity="start|center"
+                android:layout_marginStart="@dimen/Margin5dp"
+                android:fontFamily="@font/poppins"
+
+                android:textColor="@color/g_black"
+
+                android:layout_height="wrap_content"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+</com.google.android.material.card.MaterialCardView>

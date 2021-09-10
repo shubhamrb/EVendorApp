@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="top"
+    android:gravity="top"
+    android:background="@color/gray"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:weightSum="5"
+        android:padding="@dimen/five"
+        android:orientation="horizontal"
+        android:background="@drawable/white_gredient_bg"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="35sp"
+            android:padding="@dimen/five"
+            android:layout_weight="0"
+            android:layout_margin="@dimen/five"
+            android:backgroundTint="@color/black"
+            android:background="@drawable/ic_menu_camera"
+            android:layout_height="35dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/forget_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Account"
+            app:fontFamily="@font/montserrat_b"
+            android:gravity="center|start"
+android:layout_weight="5"
+            android:layout_gravity="center|start"
+            android:padding="@dimen/five"
+            android:textSize="@dimen/tittle_text_size"
+
+            android:textColor="@color/black"
+            android:alpha="0.7"
+
+            app:layout_constraintTop_toBottomOf="@id/frameId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/ten"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textview.MaterialTextView
+
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bhupesh Sen"
+            app:fontFamily="@font/montserrat_b"
+            android:gravity="top|start"
+
+            android:layout_gravity="top|start"
+
+            android:textSize="@dimen/text_size_edit"
+
+            android:textColor="@color/black"
+            android:alpha="0.7"
+
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="797430255"
+            app:fontFamily="@font/montserrat"
+            android:gravity="top|start"
+
+            android:layout_gravity="top|start"
+
+            android:textSize="@dimen/ten"
+
+            android:textColor="@color/black"
+            android:alpha="0.8"
+
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bhupeshsen11@gmail.com"
+            app:fontFamily="@font/montserrat"
+            android:gravity="top|start"
+
+            android:layout_gravity="top|start"
+
+            android:textSize="@dimen/ten"
+
+            android:textColor="@color/black"
+            android:alpha="0.8"
+
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/ten"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textview.MaterialTextView
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Account"
+            app:fontFamily="@font/montserrat_b"
+            android:gravity="top|start"
+
+            android:layout_gravity="top|start"
+
+            android:textSize="@dimen/text_size_edit"
+
+            android:textColor="@color/black"
+            android:alpha="0.7"
+
+            />
+        <com.google.android.material.textview.MaterialTextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address, Wishlist  order"
+            app:fontFamily="@font/montserrat"
+            android:gravity="top|start"
+
+            android:layout_gravity="top|start"
+
+            android:textSize="@dimen/ten"
+
+            android:textColor="@color/black"
+            android:alpha="0.8"
+
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/black"
+            android:layout_marginTop="@dimen/five"
+            android:layout_height="1sp"/>
+     </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/ten"
+
+        android:layout_height="wrap_content">
+        <com.google.android.material.textview.MaterialTextView
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Security"
+            app:fontFamily="@font/montserrat_b"
+            android:gravity="top|start"
+
+            android:layout_gravity="top|start"
+
+            android:textSize="@dimen/text_size_edit"
+
+            android:textColor="@color/black"
+            android:alpha="0.7"
+
+            />
+        <com.google.android.material.textview.MaterialTextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change Password"
+            app:fontFamily="@font/montserrat"
+            android:gravity="top|start"
+
+            android:layout_gravity="top|start"
+
+            android:textSize="@dimen/ten"
+
+            android:textColor="@color/black"
+            android:alpha="0.8"
+
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/black"
+            android:layout_marginTop="@dimen/five"
+            android:layout_height="1sp"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/ten"
+
+        android:layout_height="wrap_content">
+        <com.google.android.material.textview.MaterialTextView
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Help"
+            app:fontFamily="@font/montserrat_b"
+            android:gravity="top|start"
+
+            android:layout_gravity="top|start"
+
+            android:textSize="@dimen/text_size_edit"
+
+            android:textColor="@color/black"
+            android:alpha="0.7"
+
+            />
+        <com.google.android.material.textview.MaterialTextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Help and Support"
+            app:fontFamily="@font/montserrat"
+            android:gravity="top|start"
+
+            android:layout_gravity="top|start"
+
+            android:textSize="@dimen/ten"
+
+            android:textColor="@color/black"
+            android:alpha="0.8"
+
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/black"
+            android:layout_marginTop="@dimen/five"
+            android:layout_height="1sp"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

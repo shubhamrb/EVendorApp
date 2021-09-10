@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.servicevendor.VendorActivity">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_gredient_bg"
+                app:titleTextColor="@color/white"
+                android:padding="@dimen/Margin5dp"
+
+
+                app:elevation="0dp">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/white_gredient_bg"
+                    app:contentInsetStart="0dp"
+                    app:titleTextColor="@color/black"
+
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:elevation="0dp"
+                    >
+                </androidx.appcompat.widget.Toolbar>
+
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <AutoCompleteTextView
+                android:id="@+id/edtStartPoint"
+                android:layout_margin="@dimen/Margin10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:drawableStart="@drawable/ic_baseline_map_24"
+                android:drawablePadding="@dimen/Margin10dp"
+                android:layout_marginTop="@dimen/Margin15dp"
+                android:layout_toRightOf="@+id/linerLocationicon"
+                android:background="@drawable/form_edit_text_background"
+                android:hint="Enter Your Location"
+                android:maxLength="60"
+                android:singleLine="true"
+                android:padding="15dp"
+                android:textColor="#777"
+                android:textSize="13dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+               android:id="@+id/tvlati"
+                android:layout_width="match_parent"
+                android:text="latitude"
+                android:layout_margin="@dimen/Margin10dp"
+                android:background="@drawable/form_edit_text_background"
+                android:padding="@dimen/Margin15dp"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.textview.MaterialTextView
+               android:id="@+id/tvLongi"
+                android:layout_width="match_parent"
+                android:text="longitude"
+                android:layout_margin="@dimen/Margin10dp"
+                android:background="@drawable/form_edit_text_background"
+                android:padding="@dimen/Margin15dp"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edt_zip"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                tools:ignore="SpUsage"
+
+                android:layout_marginStart="@dimen/ten"
+                android:hint="Zip Code ">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:background="@drawable/form_edit_text_background"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edt_shop_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                tools:ignore="SpUsage"
+                app:layout_constraintTop_toBottomOf="@id/login"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginStart="@dimen/ten"
+                android:hint="Shop Name ">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:background="@drawable/form_edit_text_background"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/edtDes"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:layout_marginTop="5dp"
+                tools:ignore="SpUsage"
+
+
+                android:layout_marginStart="@dimen/ten"
+                android:hint="Discription ">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:background="@drawable/form_edit_text_background"
+                    android:layout_gravity="top"
+                    android:gravity="top"
+                    android:layout_width="match_parent"
+                    android:layout_height="120sp"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:text="Start Time"
+                        android:layout_gravity="center|start"
+                        android:gravity="center|start"
+                        android:layout_marginEnd="@dimen/Margin10dp"
+                        android:layout_marginStart="@dimen/Margin10dp"
+                        app:fontFamily="@font/montserrat"
+                        android:textSize="@dimen/Margin15dp"
+                        android:padding="@dimen/Margin5dp"
+                        android:textColor="@color/black"
+                        android:alpha=".7"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="wrap_content"
+                        tools:ignore="SpUsage" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvStart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/form_edit_text_background"
+
+                        android:inputType="text"
+
+
+                        android:textSize="@dimen/text_size_edit"
+                        android:layout_marginStart="@dimen/ten"
+                        android:layout_marginEnd="@dimen/ten"
+                        android:hint="Start Time"
+                        android:padding="16dp"
+
+                        app:layout_constraintTop_toBottomOf="@id/login"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:text="End Date"
+                        android:layout_gravity="center|start"
+                        android:gravity="center|start"
+                        android:layout_marginEnd="@dimen/Margin10dp"
+                        android:layout_marginStart="@dimen/Margin10dp"
+                        app:fontFamily="@font/montserrat"
+                        android:textSize="@dimen/Margin15dp"
+                        android:padding="@dimen/Margin5dp"
+                        android:textColor="@color/black"
+                        android:alpha=".7"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="wrap_content"
+                        tools:ignore="SpUsage" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/endTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:inputType="text"
+
+                        android:textSize="@dimen/text_size_edit"
+                        android:layout_marginStart="@dimen/ten"
+                        android:layout_marginEnd="@dimen/ten"
+                        android:hint="End Time"
+                        android:background="@drawable/form_edit_text_background"
+                        android:padding="16dp"
+
+                        app:layout_constraintTop_toBottomOf="@id/login"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+android:id="@+id/edtDeliveryLimit"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                tools:ignore="SpUsage"
+                app:layout_constraintTop_toBottomOf="@id/login"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginStart="@dimen/ten"
+                android:hint="Set Limit for cash on delivery (COD) *">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:background="@drawable/form_edit_text_background"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/Margin10dp"
+
+                android:layout_marginBottom="@dimen/Margin10dp"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:text="Shop off day"
+                    android:padding="@dimen/Margin5dp"
+                    android:textSize="@dimen/text_size_edit"
+
+                    android:layout_height="wrap_content"/>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/form_edit_text_background"
+
+                    android:fontFamily="@font/montserrat_b_i"
+
+                    android:hint="Shop off day"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:textSize="@dimen/text_size_edit" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:weightSum="5"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_weight="4"
+                    android:layout_height="wrap_content">
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/shopOnOff"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_margin="@dimen/Margin10dp"
+                        android:layout_height="wrap_content"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textview.MaterialTextView
+
+                        android:layout_width="match_parent"
+                        android:text=" Order Received (if do not accept order, ON button   type the reason below.)"
+                        android:layout_gravity="center|start"
+                        android:gravity="center|start"
+                        android:layout_marginEnd="@dimen/Margin10dp"
+                        android:layout_marginStart="@dimen/Margin10dp"
+                        app:fontFamily="@font/montserrat"
+                        android:textSize="@dimen/Margin15dp"
+                        android:padding="@dimen/Margin5dp"
+                        android:textColor="@color/black"
+                        android:alpha=".7"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="wrap_content"
+                        tools:ignore="SpUsage" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/edtReason"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                tools:ignore="SpUsage"
+                app:layout_constraintTop_toBottomOf="@id/login"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginStart="@dimen/ten"
+                android:hint="Enter Reason">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/form_edit_text_background"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/today_default_message"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                tools:ignore="SpUsage"
+                app:layout_constraintTop_toBottomOf="@id/login"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_marginStart="@dimen/ten"
+                android:hint="Enter today message">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/form_edit_text_background"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:weightSum="5"
+                android:layout_margin="@dimen/Margin10dp"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:text="Shop Gallery"
+                    android:layout_weight="1"
+                    android:padding="@dimen/Margin5dp"
+                    android:textSize="@dimen/text_size_edit"
+
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:text="Add"
+                    android:id="@+id/addImage"
+                    android:textColor="@color/white"
+
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="@drawable/red_square_gradient"
+                    android:layout_weight="4"
+                    android:padding="@dimen/Margin5dp"
+                    android:textSize="@dimen/Margin15dp"
+
+                    android:layout_height="wrap_content"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:weightSum="2"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:id="@+id/selectedImageOne"
+        android:layout_height="150sp"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/Margin10dp"
+        android:background="@drawable/ic_baseline_add_photo_alternate_24"
+        android:backgroundTint="#4C4C4C" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:id="@+id/selectedImageTwo"
+        android:layout_height="150sp"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/Margin10dp"
+        android:background="@drawable/ic_baseline_add_photo_alternate_24"
+        android:backgroundTint="#4C4C4C" />
+</androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:id="@+id/selectedImageThree"
+                    android:layout_height="150sp"
+                    android:layout_weight="1"
+                    android:layout_margin="@dimen/Margin10dp"
+                    android:background="@drawable/ic_baseline_add_photo_alternate_24"
+                    android:backgroundTint="#4C4C4C" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:id="@+id/selectedImageFour"
+                    android:layout_height="150sp"
+                    android:layout_weight="1"
+                    android:layout_margin="@dimen/Margin10dp"
+                    android:background="@drawable/ic_baseline_add_photo_alternate_24"
+                    android:backgroundTint="#4C4C4C" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="100sp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:text="Update"
+        android:id="@+id/upBtn"
+        android:textColor="@color/white"
+
+        android:layout_gravity="center|end|bottom"
+        android:gravity="center|bottom"
+
+        android:background="@color/green"
+
+        android:padding="@dimen/Margin15dp"
+        android:textSize="@dimen/Margin15dp"
+
+        android:layout_height="wrap_content"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "105970643467",
+    "project_id": "apka-adda-user-app",
+    "storage_bucket": "apka-adda-user-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105970643467:android:0ff9d39081b4a8effc4d0e",
+        "android_client_info": {
+          "package_name": "com.apkaadda.vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105970643467-77katmnklhvvs93kri49jjtmnm0h1j5p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTqitGTlwD8fpj187JQebgydcsa3mRAy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105970643467-77katmnklhvvs93kri49jjtmnm0h1j5p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

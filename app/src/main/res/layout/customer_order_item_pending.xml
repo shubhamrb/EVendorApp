@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="10sp"
+
+    android:layout_margin="10sp"
+    app:contentPadding="10sp"
+    app:rippleColor="@color/colorPrimary"
+    app:cardElevation="5sp">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="5"
+
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:layout_height="wrap_content">
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="@dimen/Margin50dp"
+    android:gravity="center"
+    android:layout_gravity="center|start"
+     android:layout_height="@dimen/Margin50dp">
+
+<de.hdodenhof.circleimageview.CircleImageView
+    android:layout_width="@dimen/Margin50dp"
+    android:src="@drawable/f"
+    android:layout_height="@dimen/Margin50dp"/>
+</androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+android:id="@+id/tvOrder"
+                android:text=""
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+
+
+
+                app:fontFamily="@font/montserrat"
+                android:textSize="@dimen/ten"
+                android:textColor="@color/black"
+                android:alpha=".7"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="wrap_content"
+                tools:ignore="SpUsage" />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+android:id="@+id/orderName"
+                android:text=""
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+
+
+
+                app:fontFamily="@font/montserrat_b"
+                android:textSize="@dimen/text_size_edit"
+                android:textColor="@color/black"
+
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="wrap_content"
+                tools:ignore="SpUsage" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+android:id="@+id/orderDate"
+                android:text=""
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+
+
+
+                app:fontFamily="@font/montserrat"
+                android:textSize="@dimen/ten"
+                android:textColor="@color/black"
+                android:alpha=".7"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="wrap_content"
+                tools:ignore="SpUsage" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1.5"
+            android:layout_gravity="center|end"
+            android:gravity="center|end"
+
+            android:layout_height="wrap_content">
+
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/saveData"
+                android:layout_weight="1.5"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Assign Delivery Boy"
+android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat_b"
+                android:layout_margin="@dimen/Margin5dp"
+                android:textAllCaps="false"
+                android:background="@drawable/green_circle"
+                 android:textColor="@color/white"
+
+                android:textSize="@dimen/Margin10dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+
+    android:layout_margin="@dimen/Margin10dp"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="@dimen/Margin5dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relMain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin200dp"
+            android:background="@drawable/round_corner_layout_bg"
+            android:textColor="@color/white">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/planName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Gold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Margin30dp"
+                app:fontFamily="@font/montserrat_b" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/planName"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/Margin10dp"
+                android:text="For 50 Days"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Margin30dp"
+                app:fontFamily="@font/montserrat_b" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="80sp"
+            android:gravity="center"
+
+            android:orientation="vertical">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recentOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+
+                android:orientation="horizontal"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:reverseLayout="true"
+
+                tools:listitem="@layout/category_item" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/planPointList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/Margin15dp"
+
+                android:divider="@null"
+                android:orientation="vertical"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:reverseLayout="true"
+
+                tools:listitem="@layout/package_list_name" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom|end|center"
+        android:gravity="center"
+        android:layout_marginBottom="15sp"
+        android:layout_marginEnd="@dimen/margin25dp"
+        android:layout_marginStart="@dimen/margin25dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/Margin10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvDiscountPrice"
+                android:text="100"
+                android:padding="@dimen/Margin5dp"
+                android:textSize="@dimen/Margin20dp"
+                android:fontFamily="@font/montserrat_b"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvActualPrice"
+                android:text="100"
+                android:padding="@dimen/Margin5dp"
+                android:textSize="@dimen/Margin20dp"
+                android:fontFamily="@font/montserrat_b"
+                android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/buyBtn"
+            android:elevation="5dp"
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buy Now"
+
+            android:padding="@dimen/Margin10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:fontFamily="@font/montserrat_b"
+            android:textAllCaps="false"
+            android:background="@drawable/green_rect_gredient_bg"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_edit"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+ </androidx.coordinatorlayout.widget.CoordinatorLayout>

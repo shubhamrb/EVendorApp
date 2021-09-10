@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:background="@drawable/dw_card"
+    android:elevation="3dp"
+android:id="@+id/cardView"
+
+
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="10sp"
+
+android:padding="@dimen/Margin10dp"
+    android:layout_margin="5sp"
+
+    app:rippleColor="@color/colorPrimary"
+    app:cardElevation="5sp">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="match_parent"
+            android:src="@drawable/f"
+            android:layout_height="@dimen/Margin50dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+
+            android:text="Jan 1 2020"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+android:padding="@dimen/Margin10dp"
+
+            app:fontFamily="@font/montserrat"
+            android:textSize="@dimen/text_size_edit"
+            android:textColor="@color/black"
+
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"
+            tools:ignore="SpUsage" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+ </androidx.appcompat.widget.LinearLayoutCompat>

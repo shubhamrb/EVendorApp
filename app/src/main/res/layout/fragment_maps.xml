@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/bg_color"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="70sp"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:maxWidth="250dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintBottom_toTopOf="@id/iv_marker"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Getting address..."
+                            android:textSize="14sp"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:background="@color/white"/>
+
+                        <ProgressBar
+                            android:id="@+id/progress_bar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_gravity="end" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_marker"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginBottom="36dp"
+                    app:srcCompat="@drawable/pin"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/fabSet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:gravity="center"
+
+                    android:text="Done"
+                    android:textAllCaps="false"
+                    android:enabled="false"
+                    app:iconGravity="end"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/green"
+                    app:backgroundTint="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:backgroundTint="@color/white"
+                    app:tint="@color/green"
+
+
+                    android:src="@drawable/ic_my_location_black_24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/Margin5dp"
+                android:layout_marginStart="@dimen/ten"
+                android:layout_marginEnd="@dimen/ten"
+
+                android:layout_height="wrap_content">
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mapLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/Margin5dp"
+                    android:inputType="text"
+                    android:textSize="@dimen/text_size_edit"
+                    android:background="@drawable/white_gredient_bg_rect"
+                    android:hint="Location Address"
+                    android:padding="16dp"
+                    />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/Margin5dp"
+                    android:inputType="text"
+                    android:textSize="@dimen/text_size_edit"
+                    android:background="@drawable/white_gredient_bg_rect"
+                    android:hint="Full Name"
+                    android:padding="16dp"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/Margin10dp"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:textSize="@dimen/text_size_edit"
+                    android:background="@drawable/white_gredient_bg_rect"
+                    android:hint="Mobile No."
+                    android:padding="16dp"
+                    />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editEmailId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/Margin10dp"
+                    android:inputType="text"
+                    android:textSize="@dimen/text_size_edit"
+                    android:background="@drawable/white_gredient_bg_rect"
+                    android:hint="Email id."
+                    android:padding="16dp"
+                    />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_house"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/Margin10dp"
+                    android:inputType="text"
+                    android:textSize="@dimen/text_size_edit"
+                    android:background="@drawable/white_gredient_bg_rect"
+                    android:hint="House No./Flate No./Building No"
+                    android:padding="16dp"
+                    />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_street"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/Margin10dp"
+                    android:inputType="text"
+                    android:textSize="@dimen/text_size_edit"
+                    android:background="@drawable/white_gredient_bg_rect"
+                    android:hint="Street Name / Local Name / Locality"
+                    android:padding="16dp"
+                    />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/Margin10dp"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tvHome"
+                    android:background="@color/red"
+                    android:padding="@dimen/Margin5dp"
+                    android:textSize="@dimen/Margin15dp"
+                    android:text="Home"
+                    android:layout_margin="@dimen/Margin5dp"
+
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/montserrat_b"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvWork"
+                    android:layout_width="wrap_content"
+                    android:padding="@dimen/Margin5dp"
+                    android:textSize="@dimen/Margin15dp"
+                    android:text="Work Address"
+                    android:background="@color/white"
+
+                    android:layout_margin="@dimen/Margin5dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat_b"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:padding="@dimen/Margin10dp"
+        android:layout_gravity="end|bottom"
+        android:gravity="end|bottom"
+        android:layout_marginEnd="@dimen/Margin5dp"
+        android:layout_marginStart="@dimen/Margin5dp"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/myCurrentLocation"
+                android:elevation="5dp"
+                android:visibility="gone"
+                android:layout_margin="@dimen/Margin5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Detect My Location"
+                android:padding="@dimen/Margin10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+
+                android:fontFamily="@font/montserrat_b"
+                android:textAllCaps="false"
+                android:background="@drawable/red_gredient_rect_bg"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_edit"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+
+        android:layout_gravity="center|bottom"
+        android:gravity="center|bottom"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pinMap"
+            android:elevation="5dp"
+            android:layout_margin="@dimen/Margin5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save My Location"
+            android:padding="@dimen/Margin10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:fontFamily="@font/montserrat_b"
+            android:textAllCaps="false"
+            android:background="@drawable/green_gredient_rect_bg"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_edit"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

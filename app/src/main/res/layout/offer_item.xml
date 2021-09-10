@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+android:layout_margin="@dimen/Margin5dp"
+    app:cardElevation="@dimen/Margin5dp"
+    app:cardCornerRadius="20dp"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/white"
+    android:id="@+id/card_view">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="4"
+            android:gravity="center">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text.CenterStacked"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_weight="4"
+                android:src="@drawable/f"
+                app:shapeAppearanceOverlay="@style/RoundedImageRectRound" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/Margin10dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tittle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_b"
+                android:text="Week Special offer"
+                android:textColor="@color/black"
+                android:textSize="@dimen/Margin15dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="Week Special offer"
+                android:textColor="@color/black"
+                android:textSize="@dimen/Margin10dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:text=""
+                android:padding="@dimen/Margin5dp"
+                android:textSize="@dimen/Margin10dp"
+                android:id="@+id/tvStatus"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:background="@drawable/red_gredient_rect_bg"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</com.google.android.material.card.MaterialCardView>

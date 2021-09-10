@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="end"
+    android:gravity="end"
+android:layout_marginEnd="@dimen/Margin5dp"
+ android:elevation="@dimen/Margin5dp"
+    android:padding="@dimen/Margin5dp"
+    android:layout_marginTop="@dimen/Margin5dp"
+    android:layout_marginBottom="@dimen/Margin5dp"
+    android:layout_marginStart="@dimen/Margin20dp"
+    tools:context=".MainActivity">
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="wrap_content"
+    android:background="@drawable/black_chat"
+    android:padding="@dimen/Margin5dp"
+    android:elevation="@dimen/Margin10dp"
+    android:layout_height="wrap_content">
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:padding="@dimen/Margin5dp"
+        android:textSize="@dimen/Margin15dp"
+        android:textColor="@color/white"
+        android:layout_gravity="end"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="end"
+        android:id="@+id/textViewMessage"
+        android:text="Mai Theek Huon Bhai"
+        android:layout_height="wrap_content"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+<com.google.android.material.textview.MaterialTextView
+    android:layout_width="match_parent"
+    android:text="18:00"
+    android:gravity="end"
+    android:id="@+id/textViewTime"
+    android:layout_gravity="end"
+    android:drawableTint="@color/colorPrimary"
+
+    android:drawablePadding="5sp"
+    android:drawableEnd="@drawable/ic_person_pin_black_24dp"
+    android:layout_height="wrap_content"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
