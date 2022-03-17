@@ -2,8 +2,8 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/llRoot"
+    android:layout_width="match_parent"
 
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -13,9 +13,9 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:titleTextColor="@color/white"
         android:theme="@style/AppTheme.NoActionBar.AppBarOverlay"
-        app:elevation="0dp">
+        app:elevation="0dp"
+        app:titleTextColor="@color/white">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -23,56 +23,53 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             app:contentInsetStart="0dp"
-            app:titleTextColor="@color/white"
-
             app:contentInsetStartWithNavigation="0dp"
+
             app:elevation="0dp"
-            app:popupTheme="@style/Platform.MaterialComponents" >
-
-
-
+            app:popupTheme="@style/Platform.MaterialComponents"
+            app:titleTextColor="@color/white">
 
 
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
-<androidx.appcompat.widget.LinearLayoutCompat
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_marginBottom="@dimen/Margin5dp"
-    android:elevation="@dimen/Margin5dp"
-    android:background="@color/white"
-    android:layout_height="wrap_content">
-    <com.google.android.material.textview.MaterialTextView
-       android:id="@+id/tvNameWlc"
-android:visibility="gone"
-        android:layout_width="match_parent"
-        android:text="Welcome \nMr. Bhupesh Sen"
-        android:textSize="@dimen/margin25dp"
-        android:padding="@dimen/Margin5dp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/open_sans"
-   android:layout_height="wrap_content"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/menuList"
+
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
-        tools:listitem="@layout/menuviewlayout"
-        android:orientation="horizontal"
-        app:reverseLayout="true"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginBottom="@dimen/Margin5dp"
+        android:background="@color/white"
+        android:elevation="@dimen/Margin5dp"
+        android:orientation="vertical">
 
-        android:divider="@null"
-        />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvNameWlc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
+            android:padding="@dimen/Margin5dp"
+            android:text="Welcome \nMr. Bhupesh Sen"
+            android:textColor="@color/black"
+            android:textSize="@dimen/margin25dp"
+            android:visibility="gone" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/menuList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:orientation="horizontal"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:reverseLayout="true"
+            tools:listitem="@layout/menuviewlayout" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <FrameLayout
         android:id="@+id/frameLayout"
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"/>
+        android:background="@color/white" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

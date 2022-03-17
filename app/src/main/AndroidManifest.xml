@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.Home.PaymentRequest"></activity>
+        <activity android:name=".ui.Home.PaymentRequest"/>
+        <activity android:name=".ui.product.ProductRequest"/>
         <activity android:name=".ui.services.PlanService" />
         <activity android:name=".ui.servicevendor.VendorActivity" />
         <activity android:name=".ui.Order.MyOrderDetails" />
@@ -80,6 +81,10 @@
                 <category android:name="com.dbcorp" />
             </intent-filter>
         </receiver>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBAUTLllLoIeyoajizeO0BZS8HaTYHD2Y0" />
     </application>
 
 </manifest>

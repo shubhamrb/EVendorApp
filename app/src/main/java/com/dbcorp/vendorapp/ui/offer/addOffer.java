@@ -178,8 +178,6 @@ public class addOffer extends Fragment {
     }
     private void addOffer(){
         if (InternetConnection.checkConnection(mContext)) {
-
-
             Map<String, String> params = new HashMap<>();
             params.put("title", tvTittle.getText().toString());
             params.put("description", tvDes.getText().toString());

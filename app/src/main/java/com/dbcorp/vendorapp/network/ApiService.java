@@ -4,11 +4,9 @@ package com.dbcorp.vendorapp.network;
 import com.dbcorp.vendorapp.model.CategoryResponse;
 import com.dbcorp.vendorapp.model.LoginDetails;
 import com.dbcorp.vendorapp.model.OTP;
-import com.dbcorp.vendorapp.model.VendorService;
 
 import java.util.Map;
 
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
@@ -18,12 +16,14 @@ import retrofit2.http.POST;
 
 public interface ApiService {
 
+//    String SHOP_IMG_URL = "http://top10india.in/upload/shop/";
+//    String BASE_URL = "http://top10india.in/api/v1/vendor-api/";
+//    String IMG_PRODUCT_URL = "http://top10india.in/upload/product/";
 
-    String SHOP_IMG_URL = "http://top10india.in/upload/shop/";
-     // String BASE_URL = "http://192.168.43.56/top10/api/v1/vendor-api/";
-    // String IMG_PRODUCT_URL = "http://192.168.43.56/top10/upload/product/";
-     String BASE_URL = "http://top10india.in/api/v1/vendor-api/";
-      String IMG_PRODUCT_URL = "http://top10india.in/upload/product/";
+    String SHOP_IMG_URL = "https://visionotrans.com/backend/upload/shop/";
+    String BASE_URL = "https://visionotrans.com/backend/api/v1/vendor-api/";
+    String IMG_PRODUCT_URL = "https://visionotrans.com/backend/upload/product/";
+    //https://visionotrans.com
 
     String APP_DEVICE_ID = "1234";
 
@@ -35,9 +35,7 @@ public interface ApiService {
     Call<OTP> getOtp(@FieldMap Map<String, String> uData);
 
 
-
     //------------Register Api--------
-
 
 
     //------------Get Category Api--------
@@ -71,19 +69,19 @@ public interface ApiService {
     @POST(Constants.GET_HOME)
     Call<String> getHome(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
-
+    @FormUrlEncoded
+    @POST(Constants.CHANGE_SHOP_STATUS)
+    Call<String> changeShopStatus(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
     @FormUrlEncoded
     @POST(Constants.GET_LOGIN)
-    Call<LoginDetails> loginUser(@Header("DID") String did,@Header("SK") String SK, @FieldMap Map<String, String> uData);
-
+    Call<LoginDetails> loginUser(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
     @FormUrlEncoded
     @POST(Constants.ADD_OFFER)
-    Call<String> addHome(@Header("DID") String did,@Header("SK") String SK, @FieldMap Map<String, String> uData);
-
+    Call<String> addHome(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
     //------------start offer------------
@@ -93,12 +91,12 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST(Constants.DELETE_OFFER)
-    Call<String> offerDelete(@Header("DID") String did,@Header("SK") String SK, @FieldMap Map<String, String> uData);
+    Call<String> offerDelete(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
     @FormUrlEncoded
     @POST(Constants.UPDATE_OFFER)
-    Call<String> offerUpdate(@Header("DID") String did,@Header("SK") String SK, @FieldMap Map<String, String> uData);
+    Call<String> offerUpdate(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
     //------------end offer------------
@@ -108,20 +106,17 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST(Constants.ADD_OCCUPON)
-    Call<String> addCoupon(@Header("DID") String did,@Header("SK") String SK, @FieldMap Map<String, String> uData);
+    Call<String> addCoupon(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
     @FormUrlEncoded
     @POST(Constants.DELETE_OCCUPON)
-    Call<String> deleteCoupon(@Header("DID") String did,@Header("SK") String SK, @FieldMap Map<String, String> uData);
-
+    Call<String> deleteCoupon(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
     @FormUrlEncoded
     @POST(Constants.GET_SUB_CATEGORY)
     Call<String> getSubtoSubCategory(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
-
-
 
 
     @FormUrlEncoded
@@ -135,7 +130,6 @@ public interface ApiService {
     Call<String> getOrder(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
-
     // show order Details
     @FormUrlEncoded
     @POST(Constants.GET_ORDER_DETAILS)
@@ -147,20 +141,14 @@ public interface ApiService {
     Call<String> getCoupon(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
-
-
     @FormUrlEncoded
     @POST(Constants.GET_CATEGORY)
-    Call<String> getCategory(@Header("DID") String did,  @FieldMap Map<String, String> uData);
+    Call<String> getCategory(@Header("DID") String did, @FieldMap Map<String, String> uData);
 
 
     @FormUrlEncoded
     @POST(Constants.GET_CITY)
-    Call<String> getCity(@Header("DID") String did,  @FieldMap Map<String, String> uData);
-
-
-
-
+    Call<String> getCity(@Header("DID") String did, @FieldMap Map<String, String> uData);
 
 
     @FormUrlEncoded
@@ -183,21 +171,22 @@ public interface ApiService {
     Call<String> changeStatus(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
-
     @FormUrlEncoded
     @POST(Constants.GET_BOOKING_SERVICE)
     Call<String> getBookingService(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
-
-
     @FormUrlEncoded
     @POST(Constants.ADD_PRODUCT)
     Call<String> addProduct(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
+
     @FormUrlEncoded
     @POST(Constants.ADD_PRICE_CHANGE)
     Call<String> changePrice(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
+    @FormUrlEncoded
+    @POST(Constants.PRODUCT_REQUEST)
+    Call<String> productRequest(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
     // get vendor product
@@ -225,7 +214,6 @@ public interface ApiService {
     Call<String> getBooking(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
-
     @FormUrlEncoded
     @POST(Constants.My_Chat)
     Call<String> getMyChat(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
@@ -238,14 +226,13 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST(Constants.ADD_REGISTER)
-    Call<String> addRegister(@Header("DID") String did,  @FieldMap Map<String, String> uData);
+    Call<String> addRegister(@Header("DID") String did, @FieldMap Map<String, String> uData);
 
 
     //get order details
     @FormUrlEncoded
     @POST(Constants.GET_DRIVER)
     Call<String> getDriverList(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
-
 
 
     @FormUrlEncoded
@@ -257,7 +244,6 @@ public interface ApiService {
     Call<String> getServicePlan(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
-
     @FormUrlEncoded
     @POST(Constants.UPDATE_VENDOR_SETTING)
     Call<String> updateVendorSetting(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
@@ -265,7 +251,6 @@ public interface ApiService {
     @FormUrlEncoded
     @POST(Constants.VENDOR_SETTING)
     Call<String> getVendorSetting(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
-
 
 
     @FormUrlEncoded
@@ -277,18 +262,14 @@ public interface ApiService {
     Call<String> checkPlanStatus(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
-
-
     @FormUrlEncoded
     @POST(Constants.UPDATE_FCM)
     Call<String> updateFCM(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
-
     @FormUrlEncoded
     @POST(Constants.USER_LOGOUT)
     Call<String> logoutUser(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
-
 
 
     @FormUrlEncoded
@@ -301,9 +282,6 @@ public interface ApiService {
     Call<String> getWallet(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
-
-
-
     @FormUrlEncoded
     @POST(Constants.Add_Payment_Request)
     Call<String> addPaymentRequest(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
@@ -313,6 +291,9 @@ public interface ApiService {
     @POST(Constants.Get_Payment_Request)
     Call<String> getPaymentRequest(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
+    @FormUrlEncoded
+    @POST(Constants.Get_Product_Request)
+    Call<String> getProductRequests(@Header("DID") String did, @Header("SK") String SK, @FieldMap Map<String, String> uData);
 
 
 }

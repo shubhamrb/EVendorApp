@@ -151,13 +151,13 @@ public class Util {
 
     }
     public static void showDropDown(ArrayList<DroupDownModel> droupDownModelslist, String tittle, Context context , DroupdownMenuAdapter.OnMeneuClickListnser dropContext) {
-
         AlertDialog.Builder builder2 = new AlertDialog.Builder(context);
         builder2.setCancelable(false);
         View view2 = LayoutInflater.from(context).inflate(R.layout.droup_down_layout, null);
 
         TextView tittleName=view2.findViewById(R.id.tittleName);
         EditText inputSearch=view2.findViewById(R.id.search);
+        ImageView closeImg=view2.findViewById(R.id.closeImg);
         tittleName.setVisibility(View.VISIBLE);
         tittleName.setText(tittle);
         RecyclerView listCountryData2 = view2.findViewById(R.id.listView);
@@ -194,10 +194,10 @@ public class Util {
             }
         });
         builder2.setView(view2);
-//        closeImg.setOnClickListener(v->{
-//            alertDialog.cancel();
-//            alertDialog.dismiss();
-//        });
+        closeImg.setOnClickListener(v->{
+            alertDialog.cancel();
+            alertDialog.dismiss();
+        });
 
         alertDialog = builder2.create();
         alertDialog.show();

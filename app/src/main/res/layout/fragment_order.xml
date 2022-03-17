@@ -1,229 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
 
-    android:layout_height="wrap_content">
+    android:orientation="vertical">
 
 
-    
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_marginBottom="10sp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp">
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:gravity="top"
-            android:layout_height="wrap_content">
-
+            android:orientation="vertical">
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/menuList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="none"
                 android:layout_alignParentTop="true"
-                tools:listitem="@layout/menuviewlayout"
-                android:orientation="horizontal"
-                app:reverseLayout="true"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
                 android:divider="@null"
-                />
+                android:orientation="horizontal"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:reverseLayout="true"
+
+                tools:listitem="@layout/menuviewlayout" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:weightSum="5"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/Margin10dp"
                 android:orientation="horizontal"
-                android:layout_height="wrap_content">
+                android:weightSum="5">
+
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
-                        android:text="Total Order : "
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:text="Total Order : " />
                 </androidx.appcompat.widget.LinearLayoutCompat>
+
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
                     <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
                         android:id="@+id/tvTotal"
-                        android:text=""
-                        android:layout_height="wrap_content"/>
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="00" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
                 <ProgressBar
                     android:id="@+id/progressBar"
-                    android:layout_gravity="center"
                     android:layout_width="@dimen/Margin50dp"
-                    android:layout_height="@dimen/Margin50dp"/>
+                    android:layout_height="@dimen/Margin50dp"
+                    android:layout_gravity="center" />
+
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvError"
                     android:layout_width="match_parent"
-                    android:text=""
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:fontFamily="@font/montserrat_b"
                     android:gravity="center"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/Margin20dp"
+                    android:text=""
                     android:textColor="@color/colorPrimary"
-                    android:id="@+id/tvError"
-                    android:layout_height="wrap_content"/>
+                    android:textSize="@dimen/Margin20dp" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/orderList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="none"
-                tools:listitem="@layout/vendor_order_status_item"
-                android:orientation="vertical"
-                app:reverseLayout="true"
                 android:layout_gravity="top"
-                android:gravity="top"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
                 android:divider="@null"
-                />
+                android:gravity="top"
+                android:orientation="vertical"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:reverseLayout="true"
 
-<!--            <androidx.recyclerview.widget.RecyclerView-->
-<!--                android:id="@+id/recentOrder"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:scrollbars="none"-->
+                tools:listitem="@layout/vendor_order_status_item" />
 
-<!--                tools:listitem="@layout/customer_order_item"-->
-<!--                android:orientation="vertical"-->
-<!--                app:reverseLayout="true"-->
-<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/recentOrder"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:scrollbars="none"-->
 
-<!--                android:divider="@null"-->
-<!--                />-->
+            <!--                tools:listitem="@layout/customer_order_item"-->
+            <!--                android:orientation="vertical"-->
+            <!--                app:reverseLayout="true"-->
+            <!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+
+            <!--                android:divider="@null"-->
+            <!--                />-->
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>
 
     <androidx.appcompat.widget.LinearLayoutCompat xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/acceptLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-android:id="@+id/acceptLayout"
-android:visibility="gone"
-        android:orientation="vertical"
         android:layout_gravity="bottom|end"
-        android:gravity="bottom|end"
-
         android:background="@color/white"
-        android:padding="@dimen/Margin10dp">
-<androidx.appcompat.widget.AppCompatImageView
-    android:id="@+id/imgClose"
-    android:layout_width="30sp"
+        android:gravity="bottom|end"
+        android:orientation="vertical"
 
-    android:background="@drawable/ic_close_black_24dp"
-    android:layout_height="30sp"/>
+        android:padding="@dimen/Margin10dp"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgClose"
+            android:layout_width="30sp"
+
+            android:layout_height="30sp"
+            android:background="@drawable/ic_close_black_24dp" />
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:weightSum="5"
+            android:layout_height="wrap_content"
 
             android:orientation="horizontal"
-            android:layout_height="wrap_content">
+            android:weightSum="5">
+
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
 
-                android:text="Selected Product"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center|start"
-                android:gravity="center|start"
                 android:layout_marginStart="@dimen/Margin10dp"
                 android:layout_marginTop="@dimen/Margin5dp"
-
                 android:layout_marginBottom="@dimen/Margin5dp"
-                app:fontFamily="@font/montserrat_b"
-                android:textSize="@dimen/text_size_edit"
+
                 android:layout_weight="2"
+                android:gravity="center|start"
+                android:text="Selected Product"
                 android:textColor="@color/black"
+                android:textSize="@dimen/text_size_edit"
 
+                app:fontFamily="@font/montserrat_b"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_height="wrap_content"
                 tools:ignore="SpUsage" />
+
             <com.google.android.material.textview.MaterialTextView
-                android:layout_width="match_parent"
                 android:id="@+id/tvPT"
-                android:text=" "
-                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center|end"
-                android:gravity="center|end"
                 android:layout_marginStart="@dimen/Margin10dp"
                 android:layout_marginTop="@dimen/Margin5dp"
-
                 android:layout_marginBottom="@dimen/Margin5dp"
-                app:fontFamily="@font/montserrat_b"
-                android:textSize="@dimen/text_size_edit"
-                android:textColor="@color/black"
+                android:layout_weight="3"
 
+                android:gravity="center|end"
+                android:text=" "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_edit"
+
+                app:fontFamily="@font/montserrat_b"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_height="wrap_content"
                 tools:ignore="SpUsage" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
         <View
             android:layout_width="match_parent"
-            android:background="@color/gray"
-            android:layout_height="2sp"/>
+            android:layout_height="2sp"
+            android:background="@color/gray" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:weightSum="2"
             android:id="@+id/dateTimeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:visibility="gone"
-            android:layout_height="wrap_content">
+            android:weightSum="2">
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/tvSelectTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Time"
-                    android:drawableTint="@color/white"
-                    android:drawableStart="@drawable/ic_baseline_more_time_24"
-                    android:fontFamily="@font/montserrat_b"
                     android:layout_margin="@dimen/Margin5dp"
+                    android:backgroundTint="@color/g_black"
+                    android:drawableStart="@drawable/ic_baseline_more_time_24"
+                    android:drawableTint="@color/white"
+                    android:fontFamily="@font/montserrat_b"
+                    android:text="Time"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:backgroundTint="@color/g_black"
 
-                    android:textSize="@dimen/text_size_edit"/>
+                    android:textSize="@dimen/text_size_edit" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/tvSelectDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Date"
-                    android:fontFamily="@font/montserrat_b"
                     android:layout_margin="@dimen/Margin5dp"
-                    android:textAllCaps="false"
                     android:backgroundTint="@color/g_black"
+                    android:fontFamily="@font/montserrat_b"
+                    android:text="Date"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
 
-                    android:textSize="@dimen/text_size_edit"/>
+                    android:textSize="@dimen/text_size_edit" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -231,46 +244,50 @@ android:visibility="gone"
 
         <View
             android:layout_width="match_parent"
-            android:background="@color/gray"
-            android:layout_height="2sp"/>
+            android:layout_height="2sp"
+            android:background="@color/gray" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:weightSum="2"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/tvCancel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Rejected"
-                    android:fontFamily="@font/montserrat_b"
                     android:layout_margin="@dimen/Margin5dp"
+                    android:fontFamily="@font/montserrat_b"
+                    android:text="Rejected"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
 
-                    android:textSize="@dimen/text_size_edit"/>
+                    android:textSize="@dimen/text_size_edit" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/tvAccept"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Accept"
-                    android:fontFamily="@font/montserrat_b"
                     android:layout_margin="@dimen/Margin5dp"
-                    android:textAllCaps="false"
                     android:backgroundTint="@color/green"
+                    android:fontFamily="@font/montserrat_b"
+                    android:text="Accept"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
 
-                    android:textSize="@dimen/text_size_edit"/>
+                    android:textSize="@dimen/text_size_edit" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

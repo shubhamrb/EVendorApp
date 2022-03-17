@@ -3,14 +3,15 @@ package com.dbcorp.vendorapp.adapter.order;
 /**
  * Created by Bhupesh Sen on 26-01-2021.
  */
- 
+
+import static com.dbcorp.vendorapp.network.ApiService.IMG_PRODUCT_URL;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatCheckBox;
@@ -28,23 +29,22 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static com.dbcorp.vendorapp.network.ApiService.IMG_PRODUCT_URL;
-
 public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.MyViewHolder> {
 
 
     ArrayList<Orders> listData;
     private final OnMeneuClickListnser onMenuListClicklistener;
-    static int  getPosition;
+    static int getPosition;
     private int row_index;
     Context mContext;
     int select;
-String status;
-    public OrdersAdapter(String status,ArrayList<Orders> list, OnMeneuClickListnser onLiveTestClickListener, Context context) {
+    String status;
+
+    public OrdersAdapter(String status, ArrayList<Orders> list, OnMeneuClickListnser onLiveTestClickListener, Context context) {
         this.listData = list;
-        this.status=status;
+        this.status = status;
         this.onMenuListClicklistener = onLiveTestClickListener;
-        this.mContext=context;
+        this.mContext = context;
 
     }
 
@@ -63,16 +63,16 @@ String status;
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Orders data=listData.get(position);
+        Orders data = listData.get(position);
 
 
         holder.tvStatus.setText(data.getStatusName());
-        holder.tvPrice.setText("₹ "+data.getProductPrice()+".00");
-        int tp=Integer.parseInt(data.getQuantity())*Integer.parseInt(data.getProductPrice());
-        holder.tvTotalPrice.setText(data.getQuantity()+"X"+data.getProductPrice()+" = ₹ "+tp+".00");
+        holder.tvPrice.setText("₹ " + data.getProductPrice() + ".00");
+        int tp = Integer.parseInt(data.getQuantity()) * Integer.parseInt(data.getProductPrice());
+        holder.tvTotalPrice.setText(data.getQuantity() + "X" + data.getProductPrice() + " = ₹ " + tp + ".00");
 
-
-        holder.tvStatus.setTextColor(Color.parseColor(data.getStatusColor()));
+        String statusColor = !data.getStatusColor().startsWith("#") ? "#" + data.getStatusColor() : data.getStatusColor();
+        holder.tvStatus.setTextColor(Color.parseColor(statusColor));
 
         holder.tvStatus.setText(data.getStatusName());
 
@@ -83,38 +83,37 @@ String status;
         holder.subCat.setText(data.getSubCategoryName());
         holder.subtosubCat.setText(data.getSubsubCategoryName());
         holder.tvDeliverBoy.setText(data.getDeliveryBoyName());
-if(status.equalsIgnoreCase("All") || status.equalsIgnoreCase("3") ||    status.equalsIgnoreCase("6")){
-    holder.tvCheckBox.setVisibility(View.GONE);
-}else{
-    holder.tvCheckBox.setVisibility(View.VISIBLE);
-}
+        if (status.equalsIgnoreCase("All") || status.equalsIgnoreCase("3") || status.equalsIgnoreCase("6")) {
+            holder.tvCheckBox.setVisibility(View.GONE);
+        } else {
+            holder.tvCheckBox.setVisibility(View.VISIBLE);
+        }
         holder.tvCheckBox.setVisibility(View.GONE);
 
-        holder.tvCheckUncheck.setOnClickListener(v->{
-            if(data.getCheckbox().equalsIgnoreCase("0")){
+        holder.tvCheckUncheck.setOnClickListener(v -> {
+            if (data.getCheckbox().equalsIgnoreCase("0")) {
                 data.setCheckbox("1");
-                notifyDataSetChanged();
-            }else{
+            } else {
                 data.setCheckbox("0");
-                notifyDataSetChanged();
             }
+            notifyDataSetChanged();
 
 
-            onMenuListClicklistener.onOptionClick(listData,position);
+            onMenuListClicklistener.onOptionClick(listData, position);
         });
-        if(data.getCheckbox().equalsIgnoreCase("1")){
+        if (data.getCheckbox().equalsIgnoreCase("1")) {
             holder.tvCheckUncheck.setBackgroundResource(R.drawable.check);
-        }else{
+        } else {
             holder.tvCheckUncheck.setBackgroundResource(R.drawable.uncheck);
         }
 
         holder.orderAssign.setVisibility(View.GONE);
         Glide.with(mContext)
-                .load(IMG_PRODUCT_URL+data.getProductPhoto())
+                .load(IMG_PRODUCT_URL + data.getProductPhoto())
                 .into(holder.productImg);
 
-        holder.orderAssign.setOnClickListener(v->{
-            onMenuListClicklistener.orderAssign(data,position);
+        holder.orderAssign.setOnClickListener(v -> {
+            onMenuListClicklistener.orderAssign(data, position);
         });
 
     }
@@ -125,41 +124,44 @@ if(status.equalsIgnoreCase("All") || status.equalsIgnoreCase("3") ||    status.e
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        MaterialTextView tvTotalPrice,tvDeliverBoy,tvProductName,tvProductAttribute,catName,subCat,subtosubCat, tvDate,tvOrderNumber,tvCustName,orderAssign,tvPrice,tvStatus;
+        MaterialTextView tvTotalPrice, tvDeliverBoy, tvProductName, tvProductAttribute, catName, subCat, subtosubCat, tvDate, tvOrderNumber, tvCustName, orderAssign, tvPrice, tvStatus;
         MaterialCardView cardView;
-        AppCompatCheckBox  tvCheckBox;
+        AppCompatCheckBox tvCheckBox;
         LinearLayoutCompat detailsShow;
         CircleImageView productImg;
         AppCompatImageView tvCheckUncheck;
-         MyViewHolder(View view) {
+
+        MyViewHolder(View view) {
             super(view);
 
-             tvTotalPrice=view.findViewById(R.id.tvTotalPrice);
-             tvProductName=view.findViewById(R.id.tvProductName);
-             detailsShow=view.findViewById(R.id.detailsShow);
-             tvProductAttribute=view.findViewById(R.id.tvProductAttribute);
-             catName=view.findViewById(R.id.catName);
-             tvCheckUncheck=view.findViewById(R.id.tvCheckUncheck);
-             tvCheckBox=view.findViewById(R.id.tvCheckBox);
-             productImg=view.findViewById(R.id.productImg);
-             tvDeliverBoy=view.findViewById(R.id.tvDeliverBoy);
-             subCat=view.findViewById(R.id.subCat);
-             subtosubCat=view.findViewById(R.id.subtosubCat);
-             tvStatus=view.findViewById(R.id.tvStatus);
-             orderAssign=view.findViewById(R.id.orderAssign);
+            tvTotalPrice = view.findViewById(R.id.tvTotalPrice);
+            tvProductName = view.findViewById(R.id.tvProductName);
+            detailsShow = view.findViewById(R.id.detailsShow);
+            tvProductAttribute = view.findViewById(R.id.tvProductAttribute);
+            catName = view.findViewById(R.id.catName);
+            tvCheckUncheck = view.findViewById(R.id.tvCheckUncheck);
+            tvCheckBox = view.findViewById(R.id.tvCheckBox);
+            productImg = view.findViewById(R.id.productImg);
+            tvDeliverBoy = view.findViewById(R.id.tvDeliverBoy);
+            subCat = view.findViewById(R.id.subCat);
+            subtosubCat = view.findViewById(R.id.subtosubCat);
+            tvStatus = view.findViewById(R.id.tvStatus);
+            orderAssign = view.findViewById(R.id.orderAssign);
 
 
-             tvPrice=view.findViewById(R.id.tvPrice);
-             cardView=view.findViewById(R.id.cardView);
+            tvPrice = view.findViewById(R.id.tvPrice);
+            cardView = view.findViewById(R.id.cardView);
 
-         }
+        }
     }
-    public interface OnMeneuClickListnser{
-        void onOptionClick(ArrayList<Orders>  list, int pos);
+
+    public interface OnMeneuClickListnser {
+        void onOptionClick(ArrayList<Orders> list, int pos);
+
         void orderAssign(Orders data, int pos);
     }
 
 
- }
+}
 
 

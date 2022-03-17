@@ -1,16 +1,16 @@
 package com.dbcorp.vendorapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.dbcorp.vendorapp.database.SqliteDatabase;
-import com.dbcorp.vendorapp.helper.Util;
 import com.dbcorp.vendorapp.model.LoginDetails;
 import com.dbcorp.vendorapp.ui.Home.HomeActivity;
 import com.dbcorp.vendorapp.ui.Login;
+import com.dbcorp.vendorapp.ui.servicevendor.VendorActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -24,49 +24,22 @@ public class SplashScreen extends AppCompatActivity {
         mContext = this;
         login = new SqliteDatabase(this).getLogin();
 
-
-
-            if (login == null) {
-                Intent intent = new Intent(mContext, Login.class);
-                startActivity(intent);
-                finish();
-            } else {
-                Intent intent = new Intent(mContext, HomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
-   //     new MyThread().start();
-
-    }
-
-
-    class MyThread extends Thread {
-
-
-        public void run() {
-            try {
-                Thread.sleep(3000);
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            //Log.e("status=====>>>>>>", String.valueOf(session.isLogin()));
-
-            try {
-                if (login == null) {
-                    Intent intent = new Intent(mContext, Login.class);
-                    startActivity(intent);
-                    finish();
-                } else {
-                    Intent intent = new Intent(mContext, HomeActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-
-
-            } catch (Exception e) {
-                Util.show(mContext,"Error : "+e.getMessage());
+        Intent intent = null;
+        if (login == null) {
+            intent = new Intent(mContext, Login.class);
+        } else {
+            switch (login.getIs_approve()){
+                case "1":
+                    intent = new Intent(mContext, VendorActivity.class);
+                    break;
+                case "2":
+                    intent = new Intent(mContext, HomeActivity.class);
+                    break;
+//                case "3":
+//                    break;
             }
         }
+        startActivity(intent);
+        finish();
     }
 }

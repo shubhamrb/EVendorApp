@@ -69,6 +69,7 @@ public class Warehouseproduct extends Fragment implements WarehouseProductAdapte
     RecyclerView listView;
     Warehouseproduct listnerContext;
     View view;
+    MaterialTextView payRequest;
 
     @Nullable
     @Override
@@ -93,8 +94,6 @@ public class Warehouseproduct extends Fragment implements WarehouseProductAdapte
 
     private void getProduct() {
         if (InternetConnection.checkConnection(mContext)) {
-
-
             Map<String, String> params = new HashMap<>();
             params.put("vendorId", loginDetails.getUser_id());
             params.put("mastCatId", loginDetails.getMasterCatId());
@@ -180,6 +179,7 @@ public class Warehouseproduct extends Fragment implements WarehouseProductAdapte
         popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.white_gredient_bg));
         popupWindow.showAtLocation(popupView, Gravity.TOP, 0, 0);
         TextInputEditText tvPrice = popupView.findViewById(R.id.tvPrice);
+        TextInputEditText tvMrp = popupView.findViewById(R.id.tvMrp);
         TextInputEditText tvProductQuantity = popupView.findViewById(R.id.tvProductQuantity);
         MaterialButton saveData = popupView.findViewById(R.id.saveData);
 
@@ -212,12 +212,15 @@ public class Warehouseproduct extends Fragment implements WarehouseProductAdapte
             if(tvPrice.getText().toString().length()==0){
                 Util.show(mContext,"Please enter the price");
                 return;
+            }if(tvMrp.getText().toString().length()==0){
+                Util.show(mContext,"Please enter the MRP");
+                return;
             }
             if(tvProductQuantity.getText().toString().length()==0){
                 Util.show(mContext,"Please enter the quantity");
                 return;
             }
-            addProduct(data, tvPrice.getText().toString(), tvProductQuantity.getText().toString());
+            addProduct(data, tvPrice.getText().toString(),tvMrp.getText().toString(), tvProductQuantity.getText().toString());
         });
 
         closeImg.setOnClickListener(v -> {
@@ -228,15 +231,14 @@ public class Warehouseproduct extends Fragment implements WarehouseProductAdapte
     }
 
 
-    private void addProduct(WareHouseProduct data, String price, String quantity) {
+    private void addProduct(WareHouseProduct data, String price,String mrp, String quantity) {
         if (InternetConnection.checkConnection(mContext)) {
-
-
             Map<String, String> params = new HashMap<>();
             params.put("product_id", data.getProductId());
             params.put("variant_id", data.getVariant_id());
             params.put("vendor_id", loginDetails.getUser_id());
             params.put("price", price);
+            params.put("mrp", mrp);
             params.put("quantity", quantity);
 
             Log.e("data",params.toString());
@@ -250,8 +252,6 @@ public class Warehouseproduct extends Fragment implements WarehouseProductAdapte
                     if (response.isSuccessful()) {
                         assert response.body() != null;
                         try {
-
-
                             Log.e("datares", response.body());
                             Gson gson = new Gson();
 

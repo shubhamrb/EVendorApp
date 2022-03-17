@@ -23,7 +23,7 @@ import com.dbcorp.vendorapp.model.LoginDetails;
     private final String LOGIN_KEY_MASTER_CAT_ID = "masterCatId";
     private final String LOGIN_KEY_USER_ID = "userId";
     private final String LOGIN_KEY_MASTER_CAT_NAME = "masterCatName";
-    private final String LOGIN_KEY_HASH1 = "hash1";
+    private final String LOGIN_KEY_APPROVE = "is_approve";
     private final String LOGIN_KEY_HASH2 = "hash2";
 
     public static String CurrentLatitude="latitude";
@@ -36,7 +36,7 @@ import com.dbcorp.vendorapp.model.LoginDetails;
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sb = String.format("CREATE TABLE IF NOT EXISTS %s(%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR);", TABLE_LOGIN, LOGIN_KEY_NAME, LOGIN_KEY_EMAIL,LOGIN_KEY_PHONE,LOGIN_KEY_PHOTO, LOGIN_KEY_HASH1,LOGIN_KEY_HASH2,LOGIN_KEY_USER_ID,LOGIN_KEY_MASTER_CAT_ID,LOGIN_KEY_MASTER_CAT_NAME,LOGIN_KEY_SK);
+        String sb = String.format("CREATE TABLE IF NOT EXISTS %s(%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR,%s VARCHAR);", TABLE_LOGIN, LOGIN_KEY_NAME, LOGIN_KEY_EMAIL,LOGIN_KEY_PHONE,LOGIN_KEY_PHOTO, LOGIN_KEY_APPROVE,LOGIN_KEY_USER_ID,LOGIN_KEY_MASTER_CAT_ID,LOGIN_KEY_MASTER_CAT_NAME,LOGIN_KEY_SK);
         db.execSQL(sb);
     }
 
@@ -62,8 +62,7 @@ import com.dbcorp.vendorapp.model.LoginDetails;
         cv.put(LOGIN_KEY_USER_ID, login.getUser_id());
         cv.put(LOGIN_KEY_MASTER_CAT_ID, login.getMasterCatId());
         cv.put(LOGIN_KEY_MASTER_CAT_NAME, login.getMastercatname());
-        cv.put(LOGIN_KEY_HASH1, "");
-        cv.put(LOGIN_KEY_HASH2, "");
+        cv.put(LOGIN_KEY_APPROVE, login.getIs_approve());
         db.insert(TABLE_LOGIN, null, cv);
     }
 
@@ -86,14 +85,20 @@ import com.dbcorp.vendorapp.model.LoginDetails;
         SQLiteDatabase db = getDB();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_LOGIN, null);
         if (cursor.moveToNext()) {
-                 login = new LoginDetails(cursor.getString(cursor.getColumnIndex(LOGIN_KEY_USER_ID)),cursor.getString(cursor.getColumnIndex(LOGIN_KEY_MASTER_CAT_ID)), cursor.getString(cursor.getColumnIndex(LOGIN_KEY_MASTER_CAT_NAME)),cursor.getString(cursor.getColumnIndex(LOGIN_KEY_NAME)), cursor.getString(cursor.getColumnIndex(LOGIN_KEY_EMAIL)), cursor.getString(cursor.getColumnIndex(LOGIN_KEY_PHONE)),  cursor.getString(cursor.getColumnIndex(LOGIN_KEY_SK)),cursor.getString(cursor.getColumnIndex(LOGIN_KEY_HASH1)), cursor.getString(cursor.getColumnIndex(LOGIN_KEY_HASH2)), cursor.getString(cursor.getColumnIndex(LOGIN_KEY_PHOTO)));
+                 login = new LoginDetails(
+                         cursor.getString(cursor.getColumnIndex(LOGIN_KEY_USER_ID)),
+                         cursor.getString(cursor.getColumnIndex(LOGIN_KEY_MASTER_CAT_ID)),
+                         cursor.getString(cursor.getColumnIndex(LOGIN_KEY_MASTER_CAT_NAME)),
+                         cursor.getString(cursor.getColumnIndex(LOGIN_KEY_NAME)),
+                         cursor.getString(cursor.getColumnIndex(LOGIN_KEY_EMAIL)),
+                         cursor.getString(cursor.getColumnIndex(LOGIN_KEY_PHONE)),
+                         cursor.getString(cursor.getColumnIndex(LOGIN_KEY_SK)),
+                         cursor.getString(cursor.getColumnIndex(LOGIN_KEY_APPROVE)),
+                         cursor.getString(cursor.getColumnIndex(LOGIN_KEY_PHOTO)));
             Log.e("bhsname",login.getEmail());
 
 
         }
-//        if (cursor.moveToNext()) {
-//            login = new LoginDetails(cursor.getString(cursor.getColumnIndex(LOGIN_KEY_NAME)), cursor.getString(cursor.getColumnIndex(LOGIN_KEY_EMAIL)), cursor.getString(cursor.getColumnIndex(LOGIN_KEY_PHONE)), cursor.getString(cursor.getColumnIndex(LOGIN_KEY_HASH1)), cursor.getString(cursor.getColumnIndex(LOGIN_KEY_HASH2)), cursor.getString(cursor.getColumnIndex(LOGIN_KEY_PHOTO)));
-//        }
         cursor.close();
         return login;
     }

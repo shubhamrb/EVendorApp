@@ -3,48 +3,46 @@ package com.dbcorp.vendorapp.adapter;
 /**
  * Created by Bhupesh Sen on 26-01-2021.
  */
- 
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dbcorp.vendorapp.R;
-import com.dbcorp.vendorapp.model.DroupDownModel;
 import com.google.android.material.card.MaterialCardView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyViewHolder> {
 
     private String arrItems[];
     private final OnMeneuClickListnser onMenuListClicklistener;
-    static int  getPosition;
+    static int getPosition;
     private int row_index;
     Context mContext;
-    int select;
+    public int select;
 
     public MenuListAdapter(String menuList[], OnMeneuClickListnser onLiveTestClickListener, Context context) {
         this.arrItems = menuList;
         this.onMenuListClicklistener = onLiveTestClickListener;
+        this.mContext = context;
 
-        this.mContext=context;
+    }
 
+    public MenuListAdapter(String menuList[], OnMeneuClickListnser onLiveTestClickListener, Context context,int select) {
+        this.arrItems = menuList;
+        this.onMenuListClicklistener = onLiveTestClickListener;
+        this.mContext = context;
+        this.select=select;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = null;
-
-
+        View itemView;
         itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.homemenu, parent, false);
 
 
@@ -53,22 +51,22 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        String menuName=arrItems[position];
+        String menuName = arrItems[position];
 
         holder.nameText.setText(menuName);
         //holder.number.setText(ticket.getTicketNumber());
 
 
         holder.openpanel.setOnClickListener(v -> {
-            select=position;
-            onMenuListClicklistener.onOptionClick(menuName,position);
-             notifyDataSetChanged();
+//            select = position;
+            onMenuListClicklistener.onOptionClick(menuName, position);
+//            notifyDataSetChanged();
         });
-if(select==position){
-    holder.viewBorder.setVisibility(View.VISIBLE);
-}else{
-    holder.viewBorder.setVisibility(View.GONE);
-}
+        if (select == position) {
+            holder.viewBorder.setVisibility(View.VISIBLE);
+        } else {
+            holder.viewBorder.setVisibility(View.GONE);
+        }
 
     }
 
@@ -78,25 +76,26 @@ if(select==position){
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView number,nameText;
+        TextView number, nameText;
         MaterialCardView openpanel;
         View viewBorder;
+
         MyViewHolder(View view) {
             super(view);
 
-            openpanel=view.findViewById(R.id.openpanel);
-            viewBorder=view.findViewById(R.id.border);
-            nameText=view.findViewById(R.id.name);
-
+            openpanel = view.findViewById(R.id.openpanel);
+            viewBorder = view.findViewById(R.id.border);
+            nameText = view.findViewById(R.id.name);
 
 
         }
     }
-    public interface OnMeneuClickListnser{
-        void onOptionClick(String liveTest,int pos);
+
+    public interface OnMeneuClickListnser {
+        void onOptionClick(String liveTest, int pos);
     }
 
 
- }
+}
 
 

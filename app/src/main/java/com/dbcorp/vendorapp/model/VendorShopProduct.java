@@ -13,18 +13,27 @@ public class VendorShopProduct implements Serializable {
     @SerializedName("vendor_product_id")
     @Expose
     private String vendorProductId;
+
     @SerializedName("variantValue")
     @Expose
     private String variantValue;
+
     @SerializedName("price")
     @Expose
     private String price;
+
+    @SerializedName("mrp")
+    @Expose
+    private String mrp;
+
     @SerializedName("quantity")
     @Expose
     private String quantity;
+
     @SerializedName("variant_id")
     @Expose
     private String variantId;
+
     @SerializedName("token")
     @Expose
     private String token;
@@ -49,6 +58,15 @@ public class VendorShopProduct implements Serializable {
     @SerializedName("category_name")
     @Expose
     private String categoryName;
+
+
+    public String getMrp() {
+        return mrp;
+    }
+
+    public void setMrp(String mrp) {
+        this.mrp = mrp;
+    }
 
     public String getVendorProductId() {
         return vendorProductId;

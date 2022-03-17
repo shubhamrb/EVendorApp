@@ -1,1804 +1,1314 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
- <androidx.core.widget.NestedScrollView
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content">
-  <androidx.appcompat.widget.LinearLayoutCompat
-      android:layout_width="match_parent"
-      android:orientation="vertical"
-      android:layout_height="wrap_content">
-
-
-   <androidx.appcompat.widget.LinearLayoutCompat
-       android:layout_width="match_parent"
-       android:orientation="horizontal"
-
-       android:weightSum="2"
-       android:padding="@dimen/Margin5dp"
-       android:layout_height="wrap_content">
-
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:layout_gravity="center|start"
-        android:gravity="center|start"
-        android:layout_height="wrap_content">
-<com.google.android.material.textview.MaterialTextView
-    android:layout_width="wrap_content"
-    android:text="Payment Request"
-    android:id="@+id/payRequest"
-
-    android:padding="@dimen/Margin10dp"
-    android:layout_gravity="center"
-    android:gravity="center"
-
- android:fontFamily="@font/montserrat_b"
-    android:textColor="@color/white"
-    android:background="@drawable/red_square_gradient"
-    android:layout_height="wrap_content"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:layout_gravity="end"
-        android:gravity="end"
-        android:layout_height="wrap_content">
-     <com.google.android.material.textview.MaterialTextView
-         android:layout_width="wrap_content"
-         android:text="Shopp ON/OFF"
-         android:layout_marginEnd="@dimen/Margin10dp"
-         android:layout_height="wrap_content"/>
-     <androidx.appcompat.widget.SwitchCompat
-         android:id="@+id/oNOff"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-   </androidx.appcompat.widget.LinearLayoutCompat>
-
-   <com.google.android.material.textview.MaterialTextView
-       android:layout_width="match_parent"
-       android:text="Over View"
-       android:padding="@dimen/Margin5dp"
-       android:textSize="@dimen/Margin15dp"
-       android:layout_marginStart="@dimen/Margin5dp"
-       android:fontFamily="@font/poppins"
-
-       android:layout_height="wrap_content"/>
-   <com.google.android.material.card.MaterialCardView
-
-       android:layout_width="match_parent"
-
-       android:layout_height="wrap_content"
-
-
-       app:cardBackgroundColor="@color/white"
-       app:cardCornerRadius="10sp"
-
-       android:layout_margin="5sp"
-       app:contentPadding="10sp"
-       app:rippleColor="@color/colorPrimary"
-       app:cardElevation="5sp">
-
-
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="5"
-
         android:layout_height="wrap_content">
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                android:padding="@dimen/Margin5dp"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:layout_weight="1"
+                    android:gravity="center|start"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/payRequest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center"
+                        android:background="@drawable/red_square_gradient"
+                        android:fontFamily="@font/montserrat_b"
+
+                        android:gravity="center"
+                        android:padding="@dimen/Margin10dp"
+                        android:text="Payment Request"
+                        android:textColor="@color/white" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/Margin10dp"
+                        android:text="Shop OFF" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/oNOff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/Margin10dp"
+                        android:text="ON" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/Margin5dp"
+                android:fontFamily="@font/poppins"
+                android:padding="@dimen/Margin5dp"
+                android:text="Over View"
+
+                android:textSize="@dimen/Margin15dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5sp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10sp"
+                app:cardElevation="5sp"
+                app:contentPadding="10sp"
+                app:rippleColor="@color/colorPrimary">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="@dimen/Margin50dp"
+                            android:layout_height="@dimen/Margin50dp"
+                            android:layout_gravity="center|start"
 
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_weight="2"
-         android:layout_height="wrap_content">
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="@dimen/Margin50dp"
-          android:gravity="center"
-          android:layout_gravity="center|start"
+                            android:gravity="center">
 
-          android:layout_height="@dimen/Margin50dp">
-       <androidx.appcompat.widget.AppCompatImageView
-           android:layout_width="@dimen/Margin45dp"
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/Margin45dp"
 
-           
-           android:background="@drawable/totalcollection"
-           android:layout_height="@dimen/Margin45dp"/>
-      </androidx.appcompat.widget.LinearLayoutCompat>
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_weight="1"
-         android:layout_height="wrap_content">
-      <com.google.android.material.textview.MaterialTextView
-          android:id="@+id/tvDatefour"
-          android:layout_width="match_parent"
+                                android:layout_height="@dimen/Margin45dp"
+                                android:background="@drawable/totalcollection" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-          android:text=" "
-          android:layout_gravity="center|start"
-          android:gravity="center|start"
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDatefour"
+                            android:layout_width="match_parent"
 
-          app:fontFamily="@font/montserrat"
-          android:textSize="@dimen/ten"
-          android:textColor="@color/black"
-          android:alpha=".7"
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_height="wrap_content"
-          tools:ignore="SpUsage" />
-      <com.google.android.material.textview.MaterialTextView
-          android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:alpha=".7"
 
-          android:text="Total Amount"
-          android:layout_gravity="center|start"
-          android:gravity="center|start"
 
+                            android:gravity="center|start"
+                            android:text=" "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ten"
+                            app:fontFamily="@font/montserrat"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
 
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
 
-          app:fontFamily="@font/montserrat_b"
-          android:textSize="@dimen/text_size_edit"
-          android:textColor="@color/black"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:gravity="center|start"
 
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_height="wrap_content"
-          tools:ignore="SpUsage" />
 
-      <com.google.android.material.textview.MaterialTextView
-          android:layout_width="match_parent"
+                            android:text="Total Amount"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_edit"
 
-          android:text="Today's Payment"
-          android:layout_gravity="center|start"
-          android:gravity="center|start"
+                            app:fontFamily="@font/montserrat_b"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
 
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
 
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:alpha=".7"
 
-          app:fontFamily="@font/montserrat"
-          android:textSize="@dimen/ten"
-          android:textColor="@color/black"
-          android:alpha=".7"
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_height="wrap_content"
-          tools:ignore="SpUsage" />
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
+                            android:gravity="center|start"
+                            android:text="Today's Payment"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ten"
+                            app:fontFamily="@font/montserrat"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
 
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_weight="2"
-         android:layout_gravity="center"
-         android:gravity="center"
-         android:layout_height="wrap_content">
-      <com.google.android.material.textview.MaterialTextView
-          android:id="@+id/totalCollection"
-          android:layout_width="match_parent"
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-          android:text="23"
-          android:layout_gravity="center|start"
-          android:gravity="center"
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/totalCollection"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:gravity="center"
+                            android:text="00"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/textsize18sp"
+                            app:fontFamily="@font/montserrat_b"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
 
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-          app:fontFamily="@font/montserrat_b"
-          android:textSize="@dimen/textsize18sp"
-          android:textColor="@color/colorPrimary"
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
 
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_height="wrap_content"
-          tools:ignore="SpUsage" />
+            <com.google.android.material.card.MaterialCardView
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
+                android:layout_width="match_parent"
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
-   </com.google.android.material.card.MaterialCardView>
+                android:layout_height="wrap_content"
 
-   <com.google.android.material.card.MaterialCardView
 
-       android:layout_width="match_parent"
+                android:layout_margin="5sp"
+                app:cardBackgroundColor="@color/white"
 
-       android:layout_height="wrap_content"
+                app:cardCornerRadius="10sp"
+                app:cardElevation="5sp"
+                app:contentPadding="10sp"
+                app:rippleColor="@color/colorPrimary">
 
 
-       app:cardBackgroundColor="@color/white"
-       app:cardCornerRadius="10sp"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
 
-       android:layout_margin="5sp"
-       app:contentPadding="10sp"
-       app:rippleColor="@color/colorPrimary"
-       app:cardElevation="5sp">
+                    android:weightSum="5">
 
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="5"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="@dimen/Margin45dp"
+                            android:layout_height="@dimen/Margin45dp"
+                            android:layout_gravity="center|start"
 
-        android:layout_height="wrap_content">
+                            android:gravity="center">
 
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_weight="2"
-         android:layout_height="wrap_content">
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="@dimen/Margin45dp"
-          android:gravity="center"
-          android:layout_gravity="center|start"
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/Margin45dp"
 
-          android:layout_height="@dimen/Margin45dp">
-       <androidx.appcompat.widget.AppCompatImageView
-           android:layout_width="@dimen/Margin45dp"
 
-           
-           android:background="@drawable/onsetcal"
-           android:layout_height="@dimen/Margin45dp"/>
-      </androidx.appcompat.widget.LinearLayoutCompat>
+                                android:layout_height="@dimen/Margin45dp"
+                                android:background="@drawable/onsetcal" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_weight="1"
-         android:layout_height="wrap_content">
-      <com.google.android.material.textview.MaterialTextView
-          android:id="@+id/tvDatefive"
-          android:layout_width="match_parent"
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-          android:text=" "
-          android:layout_gravity="center|start"
-          android:gravity="center|start"
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDatefive"
+                            android:layout_width="match_parent"
 
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:alpha=".7"
 
-          app:fontFamily="@font/montserrat"
-          android:textSize="@dimen/ten"
-          android:textColor="@color/black"
-          android:alpha=".7"
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_height="wrap_content"
-          tools:ignore="SpUsage" />
-      <com.google.android.material.textview.MaterialTextView
-          android:layout_width="match_parent"
 
-          android:text="Today Collection  Amount "
-          android:layout_gravity="center|start"
-          android:gravity="center|start"
+                            android:gravity="center|start"
+                            android:text=" "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ten"
+                            app:fontFamily="@font/montserrat"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
 
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
 
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:gravity="center|start"
 
-          app:fontFamily="@font/montserrat_b"
-          android:textSize="@dimen/text_size_edit"
-          android:textColor="@color/black"
 
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_height="wrap_content"
-          tools:ignore="SpUsage" />
+                            android:text="Today Collection  Amount "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_edit"
 
-      <com.google.android.material.textview.MaterialTextView
-          android:layout_width="match_parent"
+                            app:fontFamily="@font/montserrat_b"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
 
-          android:text="Today's payments"
-          android:layout_gravity="center|start"
-          android:gravity="center|start"
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
 
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:alpha=".7"
 
 
-          app:fontFamily="@font/montserrat"
-          android:textSize="@dimen/ten"
-          android:textColor="@color/black"
-          android:alpha=".7"
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_height="wrap_content"
-          tools:ignore="SpUsage" />
+                            android:gravity="center|start"
+                            android:text="Today's payments"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ten"
+                            app:fontFamily="@font/montserrat"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_weight="2"
-         android:layout_gravity="center"
-         android:gravity="center"
-         android:layout_height="wrap_content">
-      <com.google.android.material.textview.MaterialTextView
-          android:id="@+id/acceptCollection"
-          android:layout_width="match_parent"
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-          android:text="23"
-          android:layout_gravity="center|start"
-          android:gravity="center"
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/acceptCollection"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:gravity="center"
+                            android:text="00"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/textsize18sp"
+                            app:fontFamily="@font/montserrat_b"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
 
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
-          app:fontFamily="@font/montserrat_b"
-          android:textSize="@dimen/textsize18sp"
-          android:textColor="@color/colorPrimary"
 
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_height="wrap_content"
-          tools:ignore="SpUsage" />
+            </com.google.android.material.card.MaterialCardView>
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
+            <com.google.android.material.card.MaterialCardView
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+                android:layout_width="match_parent"
 
+                android:layout_height="wrap_content"
 
-   </com.google.android.material.card.MaterialCardView>
 
-   <com.google.android.material.card.MaterialCardView
+                android:layout_margin="5sp"
+                app:cardBackgroundColor="@color/white"
 
-       android:layout_width="match_parent"
+                app:cardCornerRadius="10sp"
+                app:cardElevation="5sp"
+                app:contentPadding="10sp"
+                app:rippleColor="@color/colorPrimary">
 
-       android:layout_height="wrap_content"
 
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
 
-       app:cardBackgroundColor="@color/white"
-       app:cardCornerRadius="10sp"
+                    android:weightSum="5">
 
-       android:layout_margin="5sp"
-       app:contentPadding="10sp"
-       app:rippleColor="@color/colorPrimary"
-       app:cardElevation="5sp">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
 
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="@dimen/Margin50dp"
+                            android:layout_height="@dimen/Margin50dp"
+                            android:layout_gravity="center|start"
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="5"
+                            android:gravity="center">
 
-        android:layout_height="wrap_content">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/Margin45dp"
 
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_weight="2"
-         android:layout_height="wrap_content">
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="@dimen/Margin50dp"
-          android:gravity="center"
-          android:layout_gravity="center|start"
 
-          android:layout_height="@dimen/Margin50dp">
-       <androidx.appcompat.widget.AppCompatImageView
-           android:layout_width="@dimen/Margin45dp"
+                                android:layout_height="@dimen/Margin45dp"
+                                android:background="@drawable/onsetcan" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-           
-           android:background="@drawable/onsetcan"
-           android:layout_height="@dimen/Margin45dp"/>
-      </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_weight="1"
-         android:layout_height="wrap_content">
-      <com.google.android.material.textview.MaterialTextView
-          android:id="@+id/tvDateSix"
-          android:layout_width="match_parent"
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-          android:text=" "
-          android:layout_gravity="center|start"
-          android:gravity="center|start"
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvDateSix"
+                            android:layout_width="match_parent"
 
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:alpha=".7"
 
 
-          app:fontFamily="@font/montserrat"
-          android:textSize="@dimen/ten"
-          android:textColor="@color/black"
-          android:alpha=".7"
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_height="wrap_content"
-          tools:ignore="SpUsage" />
-      <com.google.android.material.textview.MaterialTextView
-          android:layout_width="match_parent"
+                            android:gravity="center|start"
+                            android:text=" "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ten"
+                            app:fontFamily="@font/montserrat"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
 
-          android:text="Today Cancel Amount "
-          android:layout_gravity="center|start"
-          android:gravity="center|start"
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
 
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:gravity="center|start"
 
 
-          app:fontFamily="@font/montserrat_b"
-          android:textSize="@dimen/text_size_edit"
-          android:textColor="@color/black"
+                            android:text="Today Cancel Amount "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_edit"
 
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_height="wrap_content"
-          tools:ignore="SpUsage" />
+                            app:fontFamily="@font/montserrat_b"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
 
-      <com.google.android.material.textview.MaterialTextView
-          android:layout_width="match_parent"
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
 
-          android:text="Today's payments"
-          android:layout_gravity="center|start"
-          android:gravity="center|start"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:alpha=".7"
 
 
+                            android:gravity="center|start"
+                            android:text="Today's payments"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/ten"
+                            app:fontFamily="@font/montserrat"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
 
-          app:fontFamily="@font/montserrat"
-          android:textSize="@dimen/ten"
-          android:textColor="@color/black"
-          android:alpha=".7"
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_height="wrap_content"
-          tools:ignore="SpUsage" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_weight="2"
-         android:layout_gravity="center"
-         android:gravity="center"
-         android:layout_height="wrap_content">
-      <com.google.android.material.textview.MaterialTextView
-          android:id="@+id/rejectedCollection"
-          android:layout_width="match_parent"
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/rejectedCollection"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:gravity="center"
+                            android:text="00"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/textsize18sp"
+                            app:fontFamily="@font/montserrat_b"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpUsage" />
 
-          android:text="23"
-          android:layout_gravity="center|start"
-          android:gravity="center"
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-          app:fontFamily="@font/montserrat_b"
-          android:textSize="@dimen/textsize18sp"
-          android:textColor="@color/colorPrimary"
+            </com.google.android.material.card.MaterialCardView>
 
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_height="wrap_content"
-          tools:ignore="SpUsage" />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/Margin5dp"
+                android:fontFamily="@font/poppins"
+                android:padding="@dimen/Margin5dp"
+                android:text="Order Status"
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
+                android:textSize="@dimen/Margin15dp" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/Margin5dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
 
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10sp"
+                    app:cardElevation="5sp"
+                    app:contentPadding="10sp"
+                    app:rippleColor="@color/colorPrimary">
 
-   </com.google.android.material.card.MaterialCardView>
-   <com.google.android.material.textview.MaterialTextView
-       android:layout_width="match_parent"
-       android:text="Order Status"
-       android:padding="@dimen/Margin5dp"
-       android:textSize="@dimen/Margin15dp"
-       android:layout_marginStart="@dimen/Margin5dp"
-       android:fontFamily="@font/poppins"
 
-       android:layout_height="wrap_content"/>
-   <androidx.appcompat.widget.LinearLayoutCompat
-       android:layout_width="match_parent"
-       android:orientation="horizontal"
-       android:weightSum="3"
-       android:layout_margin="@dimen/Margin5dp"
-       android:layout_height="wrap_content">
-    <com.google.android.material.card.MaterialCardView
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
 
-        android:layout_width="match_parent"
-android:layout_weight="1"
-        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
 
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10sp"
+                            android:orientation="vertical">
 
-        android:layout_margin="5sp"
-        app:contentPadding="10sp"
-        app:rippleColor="@color/colorPrimary"
-        app:cardElevation="5sp">
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="@dimen/Margin50dp"
+                                android:layout_height="@dimen/Margin50dp"
+                                android:layout_gravity="center"
 
+                                android:gravity="center">
 
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_gravity="center"
-         android:gravity="center"
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/meeting_report40"
 
-         android:layout_height="wrap_content">
 
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
+                                    android:layout_height="@dimen/meeting_report40"
+                                    android:background="@drawable/total" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
 
-          android:layout_height="wrap_content">
-       <androidx.appcompat.widget.LinearLayoutCompat
-           android:layout_width="@dimen/Margin50dp"
-           android:gravity="center"
-           android:layout_gravity="center"
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-           android:layout_height="@dimen/Margin50dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/meeting_report40"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-            
-            android:background="@drawable/total"
-            android:layout_height="@dimen/meeting_report40"/>
-       </androidx.appcompat.widget.LinearLayoutCompat>
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="1"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
 
-           android:text="Total"
-           android:layout_gravity="center"
-           android:gravity="center"
 
+                                android:text="Total"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_edit"
 
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
 
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/text_size_edit"
-           android:textColor="@color/black"
 
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/total"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:gravity="center"
+                                android:text="00"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/textsize18sp"
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
 
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="2"
-          android:layout_gravity="center"
-          android:gravity="center"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-           android:id="@+id/total"
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
 
-           android:layout_width="match_parent"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10sp"
+                    app:cardElevation="5sp"
+                    app:contentPadding="10sp"
+                    app:rippleColor="@color/colorPrimary">
 
-           android:text="23"
 
-           android:layout_gravity="center|start"
-           android:gravity="center"
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
 
+                        android:orientation="vertical">
 
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
 
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/textsize18sp"
-           android:textColor="@color/colorPrimary"
+                            android:orientation="vertical">
 
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="@dimen/Margin50dp"
+                                android:layout_height="@dimen/Margin50dp"
+                                android:layout_gravity="center"
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
+                                android:gravity="center">
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.card.MaterialCardView
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/meeting_report40"
 
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
 
+                                    android:layout_height="@dimen/meeting_report40"
+                                    android:background="@drawable/newo" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
 
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10sp"
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        android:layout_margin="5sp"
-        app:contentPadding="10sp"
-        app:rippleColor="@color/colorPrimary"
-        app:cardElevation="5sp">
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
 
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_gravity="center"
-         android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
 
-         android:layout_height="wrap_content">
 
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
+                                android:text="New"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_edit"
 
-          android:layout_height="wrap_content">
-       <androidx.appcompat.widget.LinearLayoutCompat
-           android:layout_width="@dimen/Margin50dp"
-           android:gravity="center"
-           android:layout_gravity="center"
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
 
-           android:layout_height="@dimen/Margin50dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/meeting_report40"
 
-            
-            android:background="@drawable/newo"
-            android:layout_height="@dimen/meeting_report40"/>
-       </androidx.appcompat.widget.LinearLayoutCompat>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="1"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:layout_width="match_parent"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-           android:text="New"
-           android:layout_gravity="center"
-           android:gravity="center"
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/New"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:gravity="center"
+                                android:text="00"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/textsize18sp"
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
 
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
 
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/text_size_edit"
-           android:textColor="@color/black"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_accepted"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10sp"
+                    app:cardElevation="5sp"
+                    app:contentPadding="10sp"
+                    app:rippleColor="@color/colorPrimary">
 
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
 
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
+                        android:orientation="vertical">
 
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="2"
-          android:layout_gravity="center"
-          android:gravity="center"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:id="@+id/New"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
 
-           android:layout_width="match_parent"
+                            android:orientation="vertical">
 
-           android:text="23"
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="@dimen/Margin50dp"
+                                android:layout_height="@dimen/Margin50dp"
+                                android:layout_gravity="center"
 
-           android:layout_gravity="center|start"
-           android:gravity="center"
+                                android:gravity="center">
 
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/meeting_report40"
 
 
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/textsize18sp"
-           android:textColor="@color/colorPrimary"
+                                    android:layout_height="@dimen/meeting_report40"
+                                    android:background="@drawable/accepted" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
 
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.card.MaterialCardView
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
 
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
 
 
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10sp"
+                                android:text="Accepted"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_edit"
 
-        android:layout_margin="5sp"
-        app:contentPadding="10sp"
-        app:rippleColor="@color/colorPrimary"
-        app:cardElevation="5sp">
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
 
 
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_gravity="center"
-         android:gravity="center"
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-         android:layout_height="wrap_content">
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/Accepted"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:gravity="center"
+                                android:text="00"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/textsize18sp"
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
 
-          android:layout_height="wrap_content">
-       <androidx.appcompat.widget.LinearLayoutCompat
-           android:layout_width="@dimen/Margin50dp"
-           android:gravity="center"
-           android:layout_gravity="center"
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-           android:layout_height="@dimen/Margin50dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/meeting_report40"
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
 
-            
-            android:background="@drawable/accepted"
-            android:layout_height="@dimen/meeting_report40"/>
-       </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/Margin5dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_delivered"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10sp"
+                    app:cardElevation="5sp"
+                    app:contentPadding="10sp"
+                    app:rippleColor="@color/colorPrimary">
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="1"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:layout_width="match_parent"
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-           android:text="Accepted"
-           android:layout_gravity="center"
-           android:gravity="center"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="@dimen/Margin50dp"
+                                android:layout_height="@dimen/Margin50dp"
+                                android:layout_gravity="center"
+                                android:gravity="center">
 
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/meeting_report40"
+                                    android:layout_height="@dimen/meeting_report40"
+                                    android:background="@drawable/delivered" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
 
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/text_size_edit"
-           android:textColor="@color/black"
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Delivered"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_edit"
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
 
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="2"
-          android:layout_gravity="center"
-          android:gravity="center"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-           android:id="@+id/Accepted"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-           android:layout_width="match_parent"
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/Delivered"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:gravity="center"
+                                android:text="00"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/textsize18sp"
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
 
-           android:text="23"
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-           android:layout_gravity="center|start"
-           android:gravity="center"
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_sale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10sp"
+                    app:cardElevation="5sp"
+                    app:contentPadding="10sp"
+                    app:rippleColor="@color/colorPrimary">
 
 
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
 
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/textsize18sp"
-           android:textColor="@color/colorPrimary"
+                        android:orientation="vertical">
 
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
+                            android:orientation="vertical">
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.google.android.material.card.MaterialCardView>
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="@dimen/Margin50dp"
+                                android:layout_height="@dimen/Margin50dp"
+                                android:layout_gravity="center"
 
+                                android:gravity="center">
 
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/meeting_report40"
 
-   </androidx.appcompat.widget.LinearLayoutCompat>
 
-   <androidx.appcompat.widget.LinearLayoutCompat
-       android:layout_width="match_parent"
-       android:orientation="horizontal"
-       android:weightSum="3"
-       android:layout_margin="@dimen/Margin5dp"
-       android:layout_height="wrap_content">
-    <com.google.android.material.card.MaterialCardView
+                                    android:layout_height="@dimen/meeting_report40"
+                                    android:background="@drawable/preparing" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
 
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10sp"
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
 
-        android:layout_margin="5sp"
-        app:contentPadding="10sp"
-        app:rippleColor="@color/colorPrimary"
-        app:cardElevation="5sp">
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
 
 
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_gravity="center"
-         android:gravity="center"
+                                android:text="Sale"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_edit"
 
-         android:layout_height="wrap_content">
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
 
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
 
-          android:layout_height="wrap_content">
-       <androidx.appcompat.widget.LinearLayoutCompat
-           android:layout_width="@dimen/Margin50dp"
-           android:gravity="center"
-           android:layout_gravity="center"
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-           android:layout_height="@dimen/Margin50dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/meeting_report40"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-            
-            android:background="@drawable/rejected"
-            android:layout_height="@dimen/meeting_report40"/>
-       </androidx.appcompat.widget.LinearLayoutCompat>
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sale"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:gravity="center"
+                                android:text="00"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/textsize18sp"
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="1"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:layout_width="match_parent"
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-           android:text="Rejected"
-           android:layout_gravity="center"
-           android:gravity="center"
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
 
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_commision"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
 
 
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/text_size_edit"
-           android:textColor="@color/black"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
 
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
+                    app:cardCornerRadius="10sp"
+                    app:cardElevation="5sp"
+                    app:contentPadding="10sp"
+                    app:rippleColor="@color/colorPrimary">
 
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
 
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="2"
-          android:layout_gravity="center"
-          android:gravity="center"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
+                        android:orientation="vertical">
 
-           android:id="@+id/Rejected"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
 
-           android:layout_width="match_parent"
+                            android:orientation="vertical">
 
-           android:text="23"
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="@dimen/Margin50dp"
+                                android:layout_height="@dimen/Margin50dp"
+                                android:layout_gravity="center"
 
-           android:layout_gravity="center|start"
-           android:gravity="center"
+                                android:gravity="center">
 
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/meeting_report40"
 
 
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/textsize18sp"
-           android:textColor="@color/colorPrimary"
+                                    android:layout_height="@dimen/meeting_report40"
+                                    android:background="@drawable/arrived" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
 
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.card.MaterialCardView
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
 
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
 
 
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10sp"
+                                android:text="Commission"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_edit"
 
-        android:layout_margin="5sp"
-        app:contentPadding="10sp"
-        app:rippleColor="@color/colorPrimary"
-        app:cardElevation="5sp">
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
 
 
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_gravity="center"
-         android:gravity="center"
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-         android:layout_height="wrap_content">
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/commission"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:gravity="center"
+                                android:text="00"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/textsize18sp"
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
 
-          android:layout_height="wrap_content">
-       <androidx.appcompat.widget.LinearLayoutCompat
-           android:layout_width="@dimen/Margin50dp"
-           android:gravity="center"
-           android:layout_gravity="center"
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-           android:layout_height="@dimen/Margin50dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/meeting_report40"
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
 
-            
-            android:background="@drawable/preparing"
-            android:layout_height="@dimen/meeting_report40"/>
-       </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="1"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:layout_width="match_parent"
 
-           android:text="Preparing"
-           android:layout_gravity="center"
-           android:gravity="center"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/Margin5dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_earning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
 
+                    app:cardCornerRadius="10sp"
+                    app:cardElevation="5sp"
+                    app:contentPadding="10sp"
+                    app:rippleColor="@color/colorPrimary">
 
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/text_size_edit"
-           android:textColor="@color/black"
 
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
 
+                        android:orientation="vertical">
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
 
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="2"
-          android:layout_gravity="center"
-          android:gravity="center"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:id="@+id/Preparing"
+                            android:orientation="vertical">
 
-           android:layout_width="match_parent"
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="@dimen/Margin50dp"
+                                android:layout_height="@dimen/Margin50dp"
+                                android:layout_gravity="center"
 
-           android:text="23"
+                                android:gravity="center">
 
-           android:layout_gravity="center|start"
-           android:gravity="center"
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/meeting_report40"
 
 
+                                    android:layout_height="@dimen/meeting_report40"
+                                    android:background="@drawable/assign" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
 
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/textsize18sp"
-           android:textColor="@color/colorPrimary"
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
 
-     </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.card.MaterialCardView
 
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-
-
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10sp"
-
-        android:layout_margin="5sp"
-        app:contentPadding="10sp"
-        app:rippleColor="@color/colorPrimary"
-        app:cardElevation="5sp">
-
-
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_gravity="center"
-         android:gravity="center"
-
-         android:layout_height="wrap_content">
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-
-          android:layout_height="wrap_content">
-       <androidx.appcompat.widget.LinearLayoutCompat
-           android:layout_width="@dimen/Margin50dp"
-           android:gravity="center"
-           android:layout_gravity="center"
-
-           android:layout_height="@dimen/Margin50dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/meeting_report40"
-
-            
-            android:background="@drawable/arrived"
-            android:layout_height="@dimen/meeting_report40"/>
-       </androidx.appcompat.widget.LinearLayoutCompat>
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="1"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:layout_width="match_parent"
-
-           android:text="Arrived"
-           android:layout_gravity="center"
-           android:gravity="center"
-
-
-
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/text_size_edit"
-           android:textColor="@color/black"
-
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
-
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="2"
-          android:layout_gravity="center"
-          android:gravity="center"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-
-           android:id="@+id/Arrived"
-
-           android:layout_width="match_parent"
-
-           android:text="23"
-
-           android:layout_gravity="center|start"
-           android:gravity="center"
-
-
-
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/textsize18sp"
-           android:textColor="@color/colorPrimary"
-
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-     </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.google.android.material.card.MaterialCardView>
-
-
-
-   </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-   <androidx.appcompat.widget.LinearLayoutCompat
-       android:layout_width="match_parent"
-       android:orientation="horizontal"
-       android:weightSum="3"
-       android:layout_margin="@dimen/Margin5dp"
-       android:layout_height="wrap_content">
-    <com.google.android.material.card.MaterialCardView
-
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-
-
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10sp"
-
-        android:layout_margin="5sp"
-        app:contentPadding="10sp"
-        app:rippleColor="@color/colorPrimary"
-        app:cardElevation="5sp">
-
-
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_gravity="center"
-         android:gravity="center"
-
-         android:layout_height="wrap_content">
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-
-          android:layout_height="wrap_content">
-       <androidx.appcompat.widget.LinearLayoutCompat
-           android:layout_width="@dimen/Margin50dp"
-           android:gravity="center"
-           android:layout_gravity="center"
-
-           android:layout_height="@dimen/Margin50dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/meeting_report40"
-
-            
-            android:background="@drawable/assign"
-            android:layout_height="@dimen/meeting_report40"/>
-       </androidx.appcompat.widget.LinearLayoutCompat>
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="1"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:layout_width="match_parent"
-
-           android:text="Assign"
-           android:layout_gravity="center"
-           android:gravity="center"
-
-
-
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/text_size_edit"
-           android:textColor="@color/black"
-
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
-
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="2"
-          android:layout_gravity="center"
-          android:gravity="center"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-
-           android:id="@+id/assigne"
-
-           android:layout_width="match_parent"
-
-           android:text="23"
-
-           android:layout_gravity="center|start"
-           android:gravity="center"
-
-
-
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/textsize18sp"
-           android:textColor="@color/colorPrimary"
-
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-     </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.card.MaterialCardView
-
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-
-
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10sp"
-
-        android:layout_margin="5sp"
-        app:contentPadding="10sp"
-        app:rippleColor="@color/colorPrimary"
-        app:cardElevation="5sp">
-
-
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_gravity="center"
-         android:gravity="center"
-
-         android:layout_height="wrap_content">
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-
-          android:layout_height="wrap_content">
-       <androidx.appcompat.widget.LinearLayoutCompat
-           android:layout_width="@dimen/Margin50dp"
-           android:gravity="center"
-           android:layout_gravity="center"
-
-           android:layout_height="@dimen/Margin50dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/meeting_report40"
-
-            
-            android:background="@drawable/ontheway"
-            android:layout_height="@dimen/meeting_report40"/>
-       </androidx.appcompat.widget.LinearLayoutCompat>
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="1"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:layout_width="match_parent"
-
-           android:text="On the Way"
-           android:layout_gravity="center"
-           android:gravity="center"
-
-
-
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/text_size_edit"
-           android:textColor="@color/black"
-
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
-
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="2"
-          android:layout_gravity="center"
-          android:gravity="center"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:id="@+id/OntheWay"
-
-           android:layout_width="match_parent"
-
-           android:text="23"
-
-           android:layout_gravity="center|start"
-           android:gravity="center"
-
-
-
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/textsize18sp"
-           android:textColor="@color/colorPrimary"
-
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-     </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.card.MaterialCardView
-
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-
-
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10sp"
-
-        android:layout_margin="5sp"
-        app:contentPadding="10sp"
-        app:rippleColor="@color/colorPrimary"
-        app:cardElevation="5sp">
-
-
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_gravity="center"
-         android:gravity="center"
-
-         android:layout_height="wrap_content">
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-
-          android:layout_height="wrap_content">
-       <androidx.appcompat.widget.LinearLayoutCompat
-           android:layout_width="@dimen/Margin50dp"
-           android:gravity="center"
-           android:layout_gravity="center"
-
-           android:layout_height="@dimen/Margin50dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/meeting_report40"
-
-            
-            android:background="@drawable/delivered"
-            android:layout_height="@dimen/meeting_report40"/>
-       </androidx.appcompat.widget.LinearLayoutCompat>
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="1"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:layout_width="match_parent"
-
-           android:text="Delivered"
-           android:layout_gravity="center"
-           android:gravity="center"
-
-
-
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/text_size_edit"
-           android:textColor="@color/black"
-
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
-
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="2"
-          android:layout_gravity="center"
-          android:gravity="center"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-
-           android:id="@+id/Delivered"
-
-           android:layout_width="match_parent"
-
-           android:text="23"
-
-           android:layout_gravity="center|start"
-           android:gravity="center"
-
-
-
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/textsize18sp"
-           android:textColor="@color/colorPrimary"
-
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-     </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.google.android.material.card.MaterialCardView>
-
-
-
-   </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-   <androidx.appcompat.widget.LinearLayoutCompat
-       android:layout_width="match_parent"
-       android:orientation="horizontal"
-       android:weightSum="3"
-       android:layout_margin="@dimen/Margin5dp"
-       android:layout_height="wrap_content">
-    <com.google.android.material.card.MaterialCardView
-
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-
-
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10sp"
-
-        android:layout_margin="5sp"
-        app:contentPadding="10sp"
-        app:rippleColor="@color/colorPrimary"
-        app:cardElevation="5sp">
-
-
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_gravity="center"
-         android:gravity="center"
-
-         android:layout_height="wrap_content">
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-
-          android:layout_height="wrap_content">
-       <androidx.appcompat.widget.LinearLayoutCompat
-           android:layout_width="@dimen/Margin50dp"
-           android:gravity="center"
-           android:layout_gravity="center"
-
-           android:layout_height="@dimen/Margin50dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/meeting_report40"
-
-            
-            android:background="@drawable/notdelivered"
-            android:layout_height="@dimen/meeting_report40"/>
-       </androidx.appcompat.widget.LinearLayoutCompat>
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="1"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:layout_width="match_parent"
-
-           android:text="Not Delivered"
-           android:layout_gravity="center"
-           android:gravity="center"
-
-
-
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/text_size_edit"
-           android:textColor="@color/black"
-
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
-
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="2"
-          android:layout_gravity="center"
-          android:gravity="center"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-
-           android:id="@+id/NotDelivered"
-
-           android:layout_width="match_parent"
-
-           android:text="23"
-
-           android:layout_gravity="center|start"
-           android:gravity="center"
-
-
-
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/textsize18sp"
-           android:textColor="@color/colorPrimary"
-
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-     </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.card.MaterialCardView
-
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-
-
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10sp"
-
-        android:layout_margin="5sp"
-        app:contentPadding="10sp"
-        app:rippleColor="@color/colorPrimary"
-        app:cardElevation="5sp">
-
-
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_gravity="center"
-         android:gravity="center"
-
-         android:orientation="vertical">
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-
-          android:orientation="vertical">
-
-       <androidx.appcompat.widget.LinearLayoutCompat
-           android:layout_width="@dimen/Margin50dp"
-           android:layout_height="@dimen/Margin50dp"
-           android:layout_gravity="center"
-
-           android:gravity="center">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/meeting_report40"
-
-
-            android:layout_height="@dimen/meeting_report40"
-            android:background="@drawable/onhold" />
-       </androidx.appcompat.widget.LinearLayoutCompat>
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:orientation="vertical">
-
-       <com.google.android.material.textview.MaterialTextView
-           android:layout_width="match_parent"
-
-           android:layout_height="wrap_content"
-           android:layout_gravity="center"
-           android:gravity="center"
-
-
-           android:text="On Hold"
-           android:textColor="@color/black"
-           android:textSize="@dimen/text_size_edit"
-
-           app:fontFamily="@font/montserrat_b"
-           app:layout_constraintTop_toTopOf="parent"
-           tools:ignore="SpUsage" />
-
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          android:layout_weight="2"
-          android:gravity="center"
-          android:orientation="vertical">
-
-       <com.google.android.material.textview.MaterialTextView
-           android:id="@+id/OnHold"
-
-           android:layout_width="match_parent"
-
-           android:layout_height="wrap_content"
-
-           android:layout_gravity="center|start"
-           android:gravity="center"
-
-
-           android:text="23"
-           android:textColor="@color/colorPrimary"
-           android:textSize="@dimen/textsize18sp"
-
-           app:fontFamily="@font/montserrat_b"
-           app:layout_constraintTop_toTopOf="parent"
-           tools:ignore="SpUsage" />
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-     </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.card.MaterialCardView
-
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-
-
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10sp"
-
-        android:layout_margin="5sp"
-        app:contentPadding="10sp"
-        app:rippleColor="@color/colorPrimary"
-        app:cardElevation="5sp">
-
-
-     <androidx.appcompat.widget.LinearLayoutCompat
-         android:layout_width="match_parent"
-         android:orientation="vertical"
-         android:layout_gravity="center"
-         android:gravity="center"
-
-         android:layout_height="wrap_content">
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-
-          android:layout_height="wrap_content">
-       <androidx.appcompat.widget.LinearLayoutCompat
-           android:layout_width="@dimen/Margin50dp"
-           android:gravity="center"
-           android:layout_gravity="center"
-          
-           android:layout_height="@dimen/Margin50dp">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/meeting_report40"
-
-            
-            android:background="@drawable/cancel"
-            android:layout_height="@dimen/meeting_report40"/>
-       </androidx.appcompat.widget.LinearLayoutCompat>
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="1"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-           android:layout_width="match_parent"
-
-           android:text="Cancel"
-           android:layout_gravity="center"
-           android:gravity="center"
-
-
-
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/text_size_edit"
-           android:textColor="@color/black"
-
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
-
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:orientation="vertical"
-          android:layout_weight="2"
-          android:layout_gravity="center"
-          android:gravity="center"
-          android:layout_height="wrap_content">
-       <com.google.android.material.textview.MaterialTextView
-
-           android:id="@+id/Cancel"
-
-           android:layout_width="match_parent"
-
-           android:text="23"
-
-           android:layout_gravity="center|start"
-           android:gravity="center"
-
-
-
-           app:fontFamily="@font/montserrat_b"
-           android:textSize="@dimen/textsize18sp"
-           android:textColor="@color/colorPrimary"
-
-           app:layout_constraintTop_toTopOf="parent"
-           android:layout_height="wrap_content"
-           tools:ignore="SpUsage" />
-
-      </androidx.appcompat.widget.LinearLayoutCompat>
-
-     </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.google.android.material.card.MaterialCardView>
-
-
-
-   </androidx.appcompat.widget.LinearLayoutCompat>
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/overView"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:visibility="gone"
-       android:scrollbars="none"
-       tools:listitem="@layout/vendor_order_status_item"
-       android:orientation="vertical"
-       app:reverseLayout="true"
-       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
-       android:divider="@null"
-       />
-
-   <com.google.android.material.textview.MaterialTextView
-       android:layout_width="match_parent"
-       android:text="Recent Orders"
-       android:padding="@dimen/Margin5dp"
-       android:textSize="@dimen/Margin15dp"
-       android:layout_marginStart="@dimen/Margin5dp"
-       android:fontFamily="@font/poppins"
-
-       android:layout_height="wrap_content"/>
-
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/recentOrder"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:scrollbars="none"
-
-       tools:listitem="@layout/customer_order_item"
-       android:orientation="vertical"
-       app:reverseLayout="true"
-       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
-       android:divider="@null"
-       />
-
-   <com.google.android.material.textview.MaterialTextView
-       android:layout_width="match_parent"
-       android:text="Recent Transactions"
-       android:padding="@dimen/Margin5dp"
-       android:textSize="@dimen/Margin15dp"
-       android:layout_marginStart="@dimen/Margin5dp"
-       android:fontFamily="@font/poppins"
-
-       android:layout_height="wrap_content"/>
-
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/transactionList"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:scrollbars="none"
-       tools:listitem="@layout/customer_transaction_item"
-       android:orientation="horizontal"
-       app:reverseLayout="true"
-       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
-       android:divider="@null"
-       />
-
-  </androidx.appcompat.widget.LinearLayoutCompat>
- </androidx.core.widget.NestedScrollView>
+                                android:text="Earning"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_edit"
+
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/earning"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:gravity="center"
+                                android:text="00"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/textsize18sp"
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_revenue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10sp"
+                    app:cardElevation="5sp"
+                    app:contentPadding="10sp"
+                    app:rippleColor="@color/colorPrimary">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="@dimen/Margin50dp"
+                                android:layout_height="@dimen/Margin50dp"
+                                android:layout_gravity="center"
+                                android:gravity="center">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/meeting_report40"
+                                    android:layout_height="@dimen/meeting_report40"
+                                    android:background="@drawable/ontheway" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Revenue"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_edit"
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/revenue"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:gravity="center"
+                                android:text="00"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/textsize18sp"
+                                app:fontFamily="@font/montserrat_b"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SpUsage" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/overView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:orientation="vertical"
+                android:scrollbars="none"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:reverseLayout="true"
+
+                tools:listitem="@layout/vendor_order_status_item" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/Margin5dp"
+                android:fontFamily="@font/poppins"
+                android:padding="@dimen/Margin5dp"
+                android:text="Recent Orders"
+
+                android:textSize="@dimen/Margin15dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recentOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+
+                android:orientation="vertical"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:reverseLayout="true"
+
+                tools:listitem="@layout/customer_order_item" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/Margin5dp"
+                android:fontFamily="@font/poppins"
+                android:padding="@dimen/Margin5dp"
+                android:text="Recent Transactions"
+
+                android:textSize="@dimen/Margin15dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/transactionList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:orientation="horizontal"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:reverseLayout="true"
+                tools:listitem="@layout/customer_transaction_item" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
 </androidx.appcompat.widget.LinearLayoutCompat>

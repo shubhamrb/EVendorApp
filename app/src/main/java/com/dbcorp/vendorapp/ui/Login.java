@@ -18,11 +18,10 @@ import com.dbcorp.vendorapp.network.InternetConnection;
 import com.dbcorp.vendorapp.network.RestClient;
 import com.dbcorp.vendorapp.ui.Home.HomeActivity;
 import com.dbcorp.vendorapp.ui.services.PlanService;
+import com.dbcorp.vendorapp.ui.servicevendor.VendorActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 import com.google.firebase.messaging.FirebaseMessaging;
 
@@ -37,11 +36,7 @@ import retrofit2.Response;
 
 public class Login extends AppCompatActivity {
 
-
-    TextInputEditText mobile,password;
-
-    MaterialTextView register;
-
+    TextInputEditText mobile, password;
     Context mContext;
     String token;
 
@@ -55,79 +50,63 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_login);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-
-        mContext=this;
+        mContext = this;
         init();
 
     }
 
+    public void init() {
+        mobile = findViewById(R.id.mobile);
+        password = findViewById(R.id.password);
 
-    public void init(){
-        mobile=findViewById(R.id.mobile);
-        password=findViewById(R.id.password);
-
-
-        findViewById(R.id.submitBtn).setOnClickListener(v->{
-
-            String usermobile="",pass="";
-            if(mobile.getText()!=null){
-                usermobile=mobile.getText().toString();
+        findViewById(R.id.submitBtn).setOnClickListener(v -> {
+            String usermobile = "", pass = "";
+            if (mobile.getText() != null) {
+                usermobile = mobile.getText().toString();
             }
-            if(password.getText()!=null){
-                pass=password.getText().toString();
+            if (password.getText() != null) {
+                pass = password.getText().toString();
             }
-            if(usermobile.equals("")){
-                Util.show(this,"Please Enter Username");
+            if (usermobile.equals("")) {
+                Util.show(this, "Please Enter Username");
                 return;
             }
-            if(pass.equals("")){
-                Util.show(this,"Please Enter Password");
+            if (pass.equals("")) {
+                Util.show(this, "Please Enter Password");
                 return;
             }
 
-            login(usermobile,pass);
+            login(usermobile, pass);
         });
 
-        findViewById(R.id.register).setOnClickListener(v->{
-            Intent mv=new Intent(Login.this,Register.class);
+        findViewById(R.id.register).setOnClickListener(v -> {
+            Intent mv = new Intent(Login.this, Register.class);
             startActivity(mv);
 
         });
         FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(new OnCompleteListener<String>() {
-                    @Override
-                    public void onComplete(@NonNull Task<String> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w("TAG", "Fetching FCM registration token failed", task.getException());
-                            return;
-                        }
-
-                        // Get new FCM registration token
-                         token = task.getResult();
-
-                        // Log and toast
-                        Log.e("msg_token_fmt", token);
-                        Toast.makeText(Login.this, token, Toast.LENGTH_SHORT).show();
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w("TAG", "Fetching FCM registration token failed", task.getException());
+                        return;
                     }
+                    // Get new FCM registration token
+                    token = task.getResult();
                 });
     }
 
 
-    public void login(String mobile,String pass){
-
+    public void login(String mobile, String pass) {
         if (InternetConnection.checkConnection(mContext)) {
-
-
             Map<String, String> params = new HashMap<>();
             params.put("number", mobile);
             params.put("password", pass);
             params.put("type", "4");
             params.put("token", token);
 
-
-            Util.showDialog("Please wait..",mContext);
+            Util.showDialog("Please wait..", mContext);
             // Calling JSON
-            Call<LoginDetails> call = RestClient.post().loginUser("1234","1",params);
+            Call<LoginDetails> call = RestClient.post().loginUser("1234", "1", params);
 
             // Enqueue Callback will be call when get response...
             call.enqueue(new Callback<LoginDetails>() {
@@ -136,26 +115,31 @@ public class Login extends AppCompatActivity {
                     if (response.isSuccessful()) {
                         assert response.body() != null;
                         try {
-
-
                             LoginDetails obj = response.body();
-                            Log.e("data", obj.getMessage());
-                            if(obj.getStatus()==true){
-                                if(obj.getMasterCatId().equalsIgnoreCase("1")){
+                            if (obj.getStatus()) {
+                                if (obj.getMasterCatId().equalsIgnoreCase("1")) {
                                     new SqliteDatabase(mContext).addLogin(obj);
                                     startActivity(new Intent(mContext, PlanService.class));
                                     finish();
-                                }else{
+                                } else {
                                     new SqliteDatabase(mContext).addLogin(obj);
-                                    startActivity(new Intent(mContext, HomeActivity.class));
+                                    switch (obj.getIs_approve()){
+                                        case "1":
+                                            startActivity(new Intent(mContext, VendorActivity.class));
+                                            break;
+                                        case "2":
+                                            startActivity(new Intent(mContext, HomeActivity.class));
+                                            break;
+                                        case "3":
+                                            break;
+                                    }
                                     finish();
                                 }
 
-                                Util.hideDialog();
-                            }else{
-                                Util.show(mContext,obj.getMessage());
-                                Util.hideDialog();
+                            } else {
+                                Util.show(mContext, obj.getMessage());
                             }
+                            Util.hideDialog();
 
                         } catch (Exception e) {
                             Util.hideDialog();
@@ -163,11 +147,11 @@ public class Login extends AppCompatActivity {
                         }
 
                     } else {
-                        try{
-                            Toast.makeText(mContext, "error message"+response.errorBody().string(), Toast.LENGTH_SHORT).show();
+                        try {
+                            Toast.makeText(mContext, "error message" + response.errorBody().string(), Toast.LENGTH_SHORT).show();
 
-                        }catch(IOException e){
-                            Toast.makeText(mContext, "error message"+response.errorBody().toString(), Toast.LENGTH_SHORT).show();
+                        } catch (IOException e) {
+                            Toast.makeText(mContext, "error message" + response.errorBody().toString(), Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         }
                         Util.hideDialog();

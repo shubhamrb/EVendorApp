@@ -3,7 +3,7 @@ package com.dbcorp.vendorapp.adapter.serviceprovider;
 /**
  * Created by Bhupesh Sen on 26-01-2021.
  */
- 
+
 import android.content.Context;
 import android.graphics.Paint;
 import android.view.LayoutInflater;
@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 import static com.dbcorp.vendorapp.network.Constants.IMAGE_OFFER_LATTER;
 
-public class ServicePlanAdapter extends RecyclerView.Adapter<ServicePlanAdapter.MyViewHolder> implements  ServicePlanPointAdapter.OnClickListener {
+public class ServicePlanAdapter extends RecyclerView.Adapter<ServicePlanAdapter.MyViewHolder> implements ServicePlanPointAdapter.OnClickListener {
 
     private final OnClickListener onClicklistener;
 
@@ -38,12 +38,13 @@ public class ServicePlanAdapter extends RecyclerView.Adapter<ServicePlanAdapter.
 
     ArrayList<ServicePackagePoint> pointList;
     ArrayList<ServicePackage> servicePackages;
+
     public ServicePlanAdapter(ArrayList<ServicePackage> list, OnClickListener onLiveTestClickListener, Context context) {
 
-        this.listData=list;
+        this.listData = list;
         this.onClicklistener = onLiveTestClickListener;
 
-        this.mContext=context;
+        this.mContext = context;
 
     }
 
@@ -51,33 +52,31 @@ public class ServicePlanAdapter extends RecyclerView.Adapter<ServicePlanAdapter.
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = null;
-
-
         itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.plan_view, parent, false);
-
-
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        ServicePackage data=listData.get(position);
-        ServicePackageDetail servicePackageDetail=data.getServicePackageDetails().get(0);
+        ServicePackage data = listData.get(position);
+        ServicePackageDetail servicePackageDetail = data.getServicePackageDetails().get(0);
         holder.planName.setText(servicePackageDetail.getName());
-        holder.tvDays.setText("For "+servicePackageDetail.getNoOfDays()+" Days");
-        holder.tvDiscountPrice.setText("Rs . "+servicePackageDetail.getDiscountPrice()+"/");
+        holder.tvDays.setText("For " + servicePackageDetail.getNoOfDays() + " Days");
+        holder.tvDiscountPrice.setText("Rs . " + servicePackageDetail.getDiscountPrice() + "/");
         holder.tvActualPrice.setText(servicePackageDetail.getPrice());
         holder.tvActualPrice.setPaintFlags(holder.tvActualPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-if(servicePackageDetail.getPrice().equalsIgnoreCase("0")){
- holder.buyBtn.setText("Free");
-}else{
-    holder.buyBtn.setText("Buy Now");
-}
-holder.buyBtn.setOnClickListener(v->{
-    onClicklistener.onOptionClick(data,position);
-});
-        servicePlanPointAdapter = new ServicePlanPointAdapter(data.getServicePackagePoints(),  ServicePlanAdapter.this::onOptionClick, mContext);
-        holder.planList.setAdapter(servicePlanPointAdapter);
+        if (servicePackageDetail.getPrice().equalsIgnoreCase("0")) {
+            holder.buyBtn.setText("Free");
+        } else {
+            holder.buyBtn.setText("Buy Now");
+        }
+        holder.buyBtn.setOnClickListener(v -> {
+            onClicklistener.onOptionClick(data, position);
+        });
+        if (data.getServicePackagePoints()!=null){
+            servicePlanPointAdapter = new ServicePlanPointAdapter(data.getServicePackagePoints(), ServicePlanAdapter.this::onOptionClick, mContext);
+            holder.planList.setAdapter(servicePlanPointAdapter);
+        }
     }
 
     @Override
@@ -90,31 +89,29 @@ holder.buyBtn.setOnClickListener(v->{
 
     }
 
-
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         RecyclerView planList;
-        MaterialTextView planName,tvDays,tvDiscountPrice,tvActualPrice,buyBtn;
-         MyViewHolder(View view) {
+        MaterialTextView planName, tvDays, tvDiscountPrice, tvActualPrice, buyBtn;
+
+        MyViewHolder(View view) {
             super(view);
-             planName=view.findViewById(R.id.planName);
-             tvDiscountPrice=view.findViewById(R.id.tvDiscountPrice);
-             tvActualPrice=view.findViewById(R.id.tvActualPrice);
-             tvDays=view.findViewById(R.id.tvDays);
-             buyBtn=view.findViewById(R.id.buyBtn);
-             planList=view.findViewById(R.id.planPointList);
-             planList.setHasFixedSize(true);
-             planList.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
-
-
-
-         }
+            planName = view.findViewById(R.id.planName);
+            tvDiscountPrice = view.findViewById(R.id.tvDiscountPrice);
+            tvActualPrice = view.findViewById(R.id.tvActualPrice);
+            tvDays = view.findViewById(R.id.tvDays);
+            buyBtn = view.findViewById(R.id.buyBtn);
+            planList = view.findViewById(R.id.planPointList);
+            planList.setHasFixedSize(true);
+            planList.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
+        }
     }
-    public interface OnClickListener{
+
+    public interface OnClickListener {
         void onOptionClick(ServicePackage data, int pos);
     }
 
 
- }
+}
 
 

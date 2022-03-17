@@ -64,12 +64,12 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.MyViewHolder
 //        Glide.with(mContext).load(IMAGE_OFFER_LATTER+data.getPic()).apply(options).into(holder.img);
 
         if(data.getActive().equalsIgnoreCase("1")){
-            holder.tvStatus.setText("Not Active");
-            holder.tvStatus.setBackgroundResource(R.drawable.red_gredient_rect_bg);
-        }else{
             holder.tvStatus.setText("Active");
             holder.tvStatus.setBackgroundResource(R.drawable.green_gredient_rect_bg);
 
+        }else{
+            holder.tvStatus.setText("Not Active");
+            holder.tvStatus.setBackgroundResource(R.drawable.red_gredient_rect_bg);
         }
         Glide.with(mContext.getApplicationContext())
                 .load(IMAGE_OFFER_LATTER+data.getPhoto())

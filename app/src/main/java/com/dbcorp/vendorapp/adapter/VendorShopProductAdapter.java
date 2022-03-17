@@ -4,11 +4,12 @@ package com.dbcorp.vendorapp.adapter;
  * Created by Bhupesh Sen on 26-01-2021.
  */
 
+import static com.dbcorp.vendorapp.network.ApiService.IMG_PRODUCT_URL;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SwitchCompat;
@@ -17,15 +18,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.dbcorp.vendorapp.R;
 import com.dbcorp.vendorapp.model.VendorShopProduct;
-import com.dbcorp.vendorapp.model.WareHouseProduct;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-
-import static com.dbcorp.vendorapp.network.ApiService.IMG_PRODUCT_URL;
 
 public class VendorShopProductAdapter extends RecyclerView.Adapter<VendorShopProductAdapter.MyViewHolder> {
 
@@ -47,7 +45,7 @@ public class VendorShopProductAdapter extends RecyclerView.Adapter<VendorShopPro
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = null;
+        View itemView;
 
 
         itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.order_item_product_view, parent, false);
@@ -63,14 +61,12 @@ public class VendorShopProductAdapter extends RecyclerView.Adapter<VendorShopPro
         holder.catName.setText(menuName.getCategoryName());
         holder.tvTotPrice.setVisibility(View.VISIBLE);
         holder.actualPrice.setVisibility(View.VISIBLE);
-        holder.tvTotalPrice.setVisibility(View.VISIBLE);
-        holder.tvQuantity.setVisibility(View.VISIBLE);
         holder.pdSwitch.setVisibility(View.VISIBLE);
         int tp = Integer.parseInt(menuName.getQuantity()) * Integer.parseInt(menuName.getPrice());
 
         holder.actualPrice.setText(menuName.getPrice() + "X" + menuName.getQuantity() + " = " + tp);
-        //  holder.tvQuantity.setText(menuName.getQuantity());
         holder.tvTotPrice.setText("₹ " + menuName.getPrice());
+        holder.mrpPrice.setText("MRP : ₹ " + menuName.getMrp());
         holder.subCat.setText(menuName.getSubCategoryName());
         holder.subtosubCat.setText(menuName.getSubSubCategoryName());
         holder.addStore.setVisibility(View.GONE);
@@ -86,14 +82,14 @@ public class VendorShopProductAdapter extends RecyclerView.Adapter<VendorShopPro
         });
 
 
-        if(menuName.getActive().equalsIgnoreCase("1")) {
+        if (menuName.getActive().equalsIgnoreCase("1")) {
             holder.pdSwitch.setChecked(true);
         } else {
             holder.pdSwitch.setChecked(false);
         }
 
-        holder.pdSwitch.setOnClickListener(v->{
-            onMenuListClicklistener.onProductSwitch(menuName);
+        holder.pdSwitch.setOnClickListener(v -> {
+            onMenuListClicklistener.onProductSwitch(position,menuName);
         });
         Glide.with(mContext)
                 .load(IMG_PRODUCT_URL + menuName.getPhoto())
@@ -110,7 +106,7 @@ public class VendorShopProductAdapter extends RecyclerView.Adapter<VendorShopPro
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         CircleImageView productImg;
-        MaterialTextView addStore, productName, tvVariantValue, catName, subCat, subtosubCat, actualPrice, tvQuantity, tvTotPrice, tvTotalPrice;
+        MaterialTextView addStore, productName, tvVariantValue, catName, subCat, subtosubCat, actualPrice, tvTotPrice,mrpPrice;
         MaterialCardView cardView;
         SwitchCompat pdSwitch;
 
@@ -125,10 +121,9 @@ public class VendorShopProductAdapter extends RecyclerView.Adapter<VendorShopPro
             subCat = view.findViewById(R.id.subCat);
             subtosubCat = view.findViewById(R.id.subtosubCat);
             actualPrice = view.findViewById(R.id.actualPrice);
-            tvQuantity = view.findViewById(R.id.tvQuantity);
             tvTotPrice = view.findViewById(R.id.tvTotPrice);
-            tvTotalPrice = view.findViewById(R.id.tvTotalPrice);
             cardView = view.findViewById(R.id.cardView);
+            mrpPrice = view.findViewById(R.id.mrpPrice);
 
         }
     }
@@ -136,7 +131,7 @@ public class VendorShopProductAdapter extends RecyclerView.Adapter<VendorShopPro
     public interface OnMeneuClickListnser {
         void onOptionClick(VendorShopProduct liveTest);
 
-        void onProductSwitch(VendorShopProduct data);
+        void onProductSwitch(int pos,VendorShopProduct data);
     }
 
 

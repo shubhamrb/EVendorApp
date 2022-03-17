@@ -7,8 +7,6 @@ import com.google.gson.annotations.SerializedName;
  * Created by Bhupesh Sen on 02-02-2021.
  */
 public class LoginDetails {
-
-
     @SerializedName("user_id")
     @Expose
     private String user_id;
@@ -42,9 +40,12 @@ public class LoginDetails {
     @SerializedName("message")
     @Expose
     private String message;
+    @SerializedName("is_approve")
+    @Expose
+    private String is_approve;
 
 
-    public LoginDetails(String user_id,String masterCatId,String mastercatname,String name, String email, String phone,String sk, String hash1, String hash2, String photo) {
+    public LoginDetails(String user_id,String masterCatId,String mastercatname,String name, String email, String phone,String sk, String is_approve, String photo) {
         this.name = name;
         this.email = email;
         this.user_id = user_id;
@@ -52,8 +53,7 @@ public class LoginDetails {
         this.masterCatId = masterCatId;
         this.mastercatname = mastercatname;
         this.sk = sk;
-        //this.hash1 = hash1;
-        //this.hash2 = hash2;
+        this.is_approve = is_approve;
         this.photo = photo;
     }
 
@@ -61,6 +61,14 @@ public class LoginDetails {
 
     }
 
+
+    public String getIs_approve() {
+        return is_approve;
+    }
+
+    public void setIs_approve(String is_approve) {
+        this.is_approve = is_approve;
+    }
 
     public String getUser_id() {
         return user_id;

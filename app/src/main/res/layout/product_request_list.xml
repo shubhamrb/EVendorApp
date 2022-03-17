@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5sp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="5sp"
+    app:cardElevation="5sp"
+    app:contentPadding="10sp"
+    app:rippleColor="@color/colorPrimary">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/productImg"
+            android:layout_width="@dimen/Margin50dp"
+            android:layout_height="@dimen/Margin50dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/f" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/Margin10dp"
+            android:layout_toEndOf="@id/productImg"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:text="Jan 1 2020"
+                android:textColor="@color/black"
+                android:textSize="@dimen/ten"
+                app:fontFamily="@font/montserrat_b"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCategoryName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+
+
+                android:text=""
+                android:textColor="@color/green"
+                android:textSize="@dimen/ten"
+
+                app:fontFamily="@font/montserrat_b"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+
+
+                android:text=""
+                android:textColor="@color/green"
+                android:textSize="@dimen/ten"
+
+                app:fontFamily="@font/montserrat_b"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:text=""
+                android:textColor="@color/green"
+                android:textSize="@dimen/ten"
+                app:fontFamily="@font/montserrat_b"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

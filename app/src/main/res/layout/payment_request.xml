@@ -1,47 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
     android:layout_margin="@dimen/Margin5dp"
-    android:layout_height="wrap_content">
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/close"
         android:layout_width="40sp"
+        android:layout_height="40sp"
         android:layout_gravity="end"
         android:layout_margin="@dimen/Margin5dp"
-        android:id="@+id/close"
-        android:background="@drawable/ic_close_black_24dp"
-        android:layout_height="40sp"/>
-
-
+        android:background="@drawable/ic_close_black_24dp" />
 
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
-        android:text="Please Enter Remark"
+        android:layout_height="wrap_content"
         android:padding="@dimen/Margin5dp"
-        android:layout_height="wrap_content"/>
+        android:text="Price*" />
 
     <com.google.android.material.textfield.TextInputEditText
-
-        android:background="@drawable/form_edit_text_background"
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/Margin10dp"
         android:layout_gravity="top"
+        android:background="@drawable/form_edit_text_background"
         android:gravity="top"
+        android:inputType="number" />
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/Margin5dp"
+        android:text="Please Enter Remark*" />
+
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/remark"
         android:layout_width="match_parent"
-        android:layout_height="120sp"
+        android:layout_height="100dp"
+        android:padding="@dimen/Margin10dp"
+        android:layout_gravity="top"
+        android:background="@drawable/form_edit_text_background"
+        android:gravity="top"
         android:inputType="text" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/submit_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save"
-    android:layout_margin="@dimen/Margin10dp"
-
-        android:textAllCaps="false"
+        android:layout_margin="@dimen/Margin10dp"
         android:background="@drawable/btn_bg"
+
+        android:text="Save"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_size_edit"
-     />
+        android:textSize="@dimen/text_size_edit" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

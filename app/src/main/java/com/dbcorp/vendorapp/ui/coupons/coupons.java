@@ -116,6 +116,7 @@ public class coupons extends Fragment implements CuponAdapter.OnMeneuClickListns
                             JSONObject object = new JSONObject(response.body());
                             Type type = new TypeToken<ArrayList<Coupon>>() {
                             }.getType();
+
                             listData = gson.fromJson(object.getJSONArray("data").toString(), type);
                             cuponAdapter = new CuponAdapter(listData, listner, mContext);
                             list.setAdapter(cuponAdapter);

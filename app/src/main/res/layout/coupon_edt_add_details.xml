@@ -5,33 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
     tools:context=".MainActivity">
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="100sp"
-            android:layout_height="wrap_content">
+            android:orientation="vertical">
+
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
 
-                android:text="Coupon Code"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center|start"
-                android:gravity="center|start"
+                android:layout_marginStart="@dimen/Margin10dp"
 
                 android:layout_marginEnd="@dimen/Margin10dp"
 
-                android:layout_marginStart="@dimen/Margin10dp"
-                app:fontFamily="@font/montserrat"
-                android:textSize="@dimen/Margin15dp"
-                android:padding="@dimen/Margin5dp"
-                android:textColor="@color/black"
                 android:alpha=".7"
+                android:gravity="center|start"
+                android:padding="@dimen/Margin5dp"
+                android:text="Coupon Code*"
+                android:textColor="@color/black"
+                android:textSize="@dimen/Margin15dp"
+                app:fontFamily="@font/montserrat"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_height="wrap_content"
                 tools:ignore="SpUsage" />
 
             <com.google.android.material.textfield.TextInputEditText
@@ -39,35 +41,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:inputType="text"
-
-                android:textSize="@dimen/text_size_edit"
                 android:layout_marginStart="@dimen/ten"
+
                 android:layout_marginEnd="@dimen/ten"
                 android:background="@drawable/white_stroke_gray"
                 android:hint=""
+                android:inputType="text"
                 android:padding="16dp"
+                android:textSize="@dimen/text_size_edit"
 
-                app:layout_constraintTop_toBottomOf="@id/login"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/login" />
+
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
 
-                android:text="Discription"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center|start"
-                android:gravity="center|start"
+                android:layout_marginStart="@dimen/Margin10dp"
 
                 android:layout_marginEnd="@dimen/Margin10dp"
 
-                android:layout_marginStart="@dimen/Margin10dp"
-                app:fontFamily="@font/montserrat"
-                android:textSize="@dimen/Margin15dp"
-                android:padding="@dimen/Margin5dp"
-                android:textColor="@color/black"
                 android:alpha=".7"
+                android:gravity="center|start"
+                android:padding="@dimen/Margin5dp"
+                android:text="Discription"
+                android:textColor="@color/black"
+                android:textSize="@dimen/Margin15dp"
+                app:fontFamily="@font/montserrat"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_height="wrap_content"
                 tools:ignore="SpUsage" />
 
             <com.google.android.material.textfield.TextInputEditText
@@ -75,103 +78,138 @@
                 android:layout_width="match_parent"
                 android:layout_height="120sp"
 
-                android:inputType="text"
                 android:layout_gravity="top"
-                android:gravity="top"
-                android:textSize="@dimen/text_size_edit"
                 android:layout_marginStart="@dimen/ten"
                 android:layout_marginEnd="@dimen/ten"
                 android:background="@drawable/white_stroke_gray"
+                android:gravity="top"
                 android:hint=""
+                android:inputType="text"
                 android:padding="16dp"
+                android:textSize="@dimen/text_size_edit"
 
-                app:layout_constraintTop_toBottomOf="@id/login"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/login" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/Margin10dp"
+                android:layout_marginEnd="@dimen/Margin10dp"
+                android:alpha=".7"
+                android:gravity="center|start"
+                android:padding="@dimen/Margin5dp"
+                android:text="Discount Type*"
+                android:textColor="@color/black"
+                android:textSize="@dimen/Margin15dp"
+                app:fontFamily="@font/montserrat"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/Margin50dp"
+                android:layout_marginStart="@dimen/ten"
+                android:layout_marginEnd="@dimen/ten"
+                android:background="@drawable/white_stroke_gray"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/login" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:weightSum="2"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_height="wrap_content">
+                android:weightSum="2">
+
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
-                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content">
+                    android:orientation="vertical">
+
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
-                        android:text="Start Date"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
-                        android:gravity="center|start"
-                        android:layout_marginEnd="@dimen/Margin10dp"
                         android:layout_marginStart="@dimen/Margin10dp"
-                        app:fontFamily="@font/montserrat"
-                        android:textSize="@dimen/Margin15dp"
+                        android:layout_marginEnd="@dimen/Margin10dp"
+                        android:alpha=".7"
+                        android:gravity="center|start"
                         android:padding="@dimen/Margin5dp"
+                        android:text="Start Date*"
 
                         android:textColor="@color/black"
-                        android:alpha=".7"
+                        android:textSize="@dimen/Margin15dp"
+                        app:fontFamily="@font/montserrat"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:layout_height="wrap_content"
                         tools:ignore="SpUsage" />
 
                     <com.google.android.material.textview.MaterialTextView
 
+                        android:id="@+id/tvStart"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tvStart"
-                        android:inputType="text"
-
-                        android:textSize="@dimen/text_size_edit"
                         android:layout_marginStart="@dimen/ten"
+
                         android:layout_marginEnd="@dimen/ten"
                         android:background="@drawable/white_stroke_gray"
                         android:hint=""
+                        android:inputType="text"
                         android:padding="16dp"
+                        android:textSize="@dimen/text_size_edit"
 
-                        app:layout_constraintTop_toBottomOf="@id/login"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintTop_toBottomOf="@id/login" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
+
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
-                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content">
+                    android:orientation="vertical">
+
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
-                        android:text="End Date"
-                        android:layout_gravity="center|start"
-                        android:gravity="center|start"
-                        android:layout_marginEnd="@dimen/Margin10dp"
-                        android:layout_marginStart="@dimen/Margin10dp"
-                        app:fontFamily="@font/montserrat"
-                        android:textSize="@dimen/Margin15dp"
-                        android:padding="@dimen/Margin5dp"
-                        android:textColor="@color/black"
-                        android:alpha=".7"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center|start"
+                        android:layout_marginStart="@dimen/Margin10dp"
+                        android:layout_marginEnd="@dimen/Margin10dp"
+                        android:alpha=".7"
+                        android:gravity="center|start"
+                        android:padding="@dimen/Margin5dp"
+                        android:text="End Date*"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/Margin15dp"
+                        app:fontFamily="@font/montserrat"
+                        app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="SpUsage" />
 
                     <com.google.android.material.textview.MaterialTextView
 
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        android:inputType="text"
                         android:id="@+id/endTime"
-                        android:textSize="@dimen/text_size_edit"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/ten"
                         android:layout_marginEnd="@dimen/ten"
                         android:background="@drawable/white_stroke_gray"
                         android:hint=""
+                        android:inputType="text"
                         android:padding="16dp"
+                        android:textSize="@dimen/text_size_edit"
 
-                        app:layout_constraintTop_toBottomOf="@id/endTime"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintTop_toBottomOf="@id/endTime" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -179,107 +217,216 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
 
-                android:text="Price"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center|start"
-                android:gravity="center|start"
+                android:layout_marginStart="@dimen/Margin10dp"
 
                 android:layout_marginEnd="@dimen/Margin10dp"
 
-                android:layout_marginStart="@dimen/Margin10dp"
-                app:fontFamily="@font/montserrat"
-                android:textSize="@dimen/Margin15dp"
-                android:padding="@dimen/Margin5dp"
-                android:textColor="@color/black"
                 android:alpha=".7"
+                android:gravity="center|start"
+                android:padding="@dimen/Margin5dp"
+                android:text="Price*"
+                android:textColor="@color/black"
+                android:textSize="@dimen/Margin15dp"
+                app:fontFamily="@font/montserrat"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_height="wrap_content"
                 tools:ignore="SpUsage" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:maxLength="2"
-
-
-                android:textSize="@dimen/text_size_edit"
                 android:layout_marginStart="@dimen/ten"
                 android:layout_marginEnd="@dimen/ten"
                 android:background="@drawable/white_stroke_gray"
                 android:hint=""
+                android:inputType="number"
                 android:padding="16dp"
+                android:textSize="@dimen/text_size_edit"
 
-                app:layout_constraintTop_toBottomOf="@id/login"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
+                app:layout_constraintTop_toBottomOf="@id/login" />
 
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
 
-                android:text="Avail limit"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center|start"
-                android:gravity="center|start"
+                android:layout_marginStart="@dimen/Margin10dp"
 
                 android:layout_marginEnd="@dimen/Margin10dp"
 
-                android:layout_marginStart="@dimen/Margin10dp"
-                app:fontFamily="@font/montserrat"
-                android:textSize="@dimen/Margin15dp"
-                android:padding="@dimen/Margin5dp"
-                android:textColor="@color/black"
                 android:alpha=".7"
+                android:gravity="center|start"
+                android:padding="@dimen/Margin5dp"
+                android:text="Limit Per User*"
+                android:textColor="@color/black"
+                android:textSize="@dimen/Margin15dp"
+                app:fontFamily="@font/montserrat"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_height="wrap_content"
                 tools:ignore="SpUsage" />
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_limit"
+                android:id="@+id/edit_user_limit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:inputType="text"
-
-                android:textSize="@dimen/text_size_edit"
                 android:layout_marginStart="@dimen/ten"
+
                 android:layout_marginEnd="@dimen/ten"
                 android:background="@drawable/white_stroke_gray"
                 android:hint=""
+                android:inputType="number"
                 android:padding="16dp"
+                android:textSize="@dimen/text_size_edit"
 
-                app:layout_constraintTop_toBottomOf="@id/login"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/login" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/Margin10dp"
+
+                android:layout_marginEnd="@dimen/Margin10dp"
+
+                android:alpha=".7"
+                android:gravity="center|start"
+                android:padding="@dimen/Margin5dp"
+                android:text="Limit Per Coupon*"
+                android:textColor="@color/black"
+                android:textSize="@dimen/Margin15dp"
+                app:fontFamily="@font/montserrat"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_coupon_limit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="@dimen/ten"
+
+                android:layout_marginEnd="@dimen/ten"
+                android:background="@drawable/white_stroke_gray"
+                android:hint=""
+                android:inputType="number"
+                android:padding="16dp"
+                android:textSize="@dimen/text_size_edit"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/login" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/Margin10dp"
+
+                android:layout_marginEnd="@dimen/Margin10dp"
+
+                android:alpha=".7"
+                android:gravity="center|start"
+                android:padding="@dimen/Margin5dp"
+                android:text="Minimum Order*"
+                android:textColor="@color/black"
+                android:textSize="@dimen/Margin15dp"
+                app:fontFamily="@font/montserrat"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="@dimen/ten"
+
+                android:layout_marginEnd="@dimen/ten"
+                android:background="@drawable/white_stroke_gray"
+                android:hint=""
+                android:inputType="number"
+                android:padding="16dp"
+                android:textSize="@dimen/text_size_edit"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/login" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/Margin10dp"
+
+                android:layout_marginEnd="@dimen/Margin10dp"
+
+                android:alpha=".7"
+                android:gravity="center|start"
+                android:padding="@dimen/Margin5dp"
+                android:text="Maximum Order*"
+                android:textColor="@color/black"
+                android:textSize="@dimen/Margin15dp"
+                app:fontFamily="@font/montserrat"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpUsage" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_max"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="@dimen/ten"
+
+                android:layout_marginEnd="@dimen/ten"
+                android:background="@drawable/white_stroke_gray"
+                android:hint=""
+                android:inputType="number"
+                android:padding="16dp"
+                android:textSize="@dimen/text_size_edit"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/login" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="end|bottom"
-        android:gravity="bottom|end"
-        android:layout_height="match_parent">
+        android:gravity="bottom|end">
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/submit_btn"
-            android:layout_margin="@dimen/Margin5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save"
+            android:layout_margin="@dimen/Margin5dp"
+            android:background="@drawable/btn_bg"
 
             android:fontFamily="@font/montserrat_b"
+            android:text="Save"
             android:textAllCaps="false"
-            android:background="@drawable/btn_bg"
             android:textColor="@color/white"
 
-            android:textSize="@dimen/text_size_edit"/>
+            android:textSize="@dimen/text_size_edit" />
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="100sp"/>
+            android:layout_height="100sp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

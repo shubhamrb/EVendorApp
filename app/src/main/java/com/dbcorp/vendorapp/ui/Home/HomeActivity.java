@@ -23,51 +23,36 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.bumptech.glide.Glide;
 import com.dbcorp.vendorapp.R;
 import com.dbcorp.vendorapp.adapter.MenuListAdapter;
-import com.dbcorp.vendorapp.adapter.ProductAdapter;
 import com.dbcorp.vendorapp.adapter.SideMenuListAdapter;
 import com.dbcorp.vendorapp.database.SqliteDatabase;
 import com.dbcorp.vendorapp.helper.Util;
 import com.dbcorp.vendorapp.model.LoginDetails;
-import com.dbcorp.vendorapp.model.Product;
-import com.dbcorp.vendorapp.model.Services;
 import com.dbcorp.vendorapp.network.ApiService;
 import com.dbcorp.vendorapp.network.InternetConnection;
 import com.dbcorp.vendorapp.network.RestClient;
 import com.dbcorp.vendorapp.ui.Login;
 import com.dbcorp.vendorapp.ui.Order.Order;
 import com.dbcorp.vendorapp.ui.coupons.coupons;
-import com.dbcorp.vendorapp.ui.inbox.Inbox;
 import com.dbcorp.vendorapp.ui.offer.offer;
 import com.dbcorp.vendorapp.ui.payment.payment;
 import com.dbcorp.vendorapp.ui.product.VendorProduct;
 import com.dbcorp.vendorapp.ui.product.Warehouseproduct;
 import com.dbcorp.vendorapp.ui.services.BookingService;
-import com.dbcorp.vendorapp.ui.services.PlanService;
 import com.dbcorp.vendorapp.ui.services.chatingservice.ChatService;
 import com.dbcorp.vendorapp.ui.services.vendorservices;
 import com.dbcorp.vendorapp.ui.servicevendor.VendorActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textview.MaterialTextView;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -95,12 +80,10 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
         setContentView(R.layout.activity_home);
         mContext = this;
         login = new SqliteDatabase(this).getLogin();
-        toolbar=findViewById(R.id.toolbar);
-     //   toolbar.setTitle("Your Setting");
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         init();
-        //String spliteStr[]=login.getName().split(" ");
         Log.e("sk", login.getSk());
         getVendorSetting();
         tvTn.setText(login.getName());
@@ -114,47 +97,32 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
         toggle.syncState();
 
     }
-    private  void getVendorSetting(){
+
+    private void getVendorSetting() {
         if (InternetConnection.checkConnection(mContext)) {
-          //  Util.showDialog("Please wait..",mContext);
             Map<String, String> params = new HashMap<>();
             params.put("vendorId", login.getUser_id());
 
-            Log.e("vendor_id",params.toString());
-            RestClient.post().getVendorSetting(ApiService.APP_DEVICE_ID,login.getSk(),params).enqueue(new Callback<String>() {
+            RestClient.post().getVendorSetting(ApiService.APP_DEVICE_ID, login.getSk(), params).enqueue(new Callback<String>() {
                 @Override
                 public void onResponse(@NotNull Call<String> call, Response<String> response) {
-                    Gson gson = new Gson();
-                    JSONObject object = null;
+                    JSONObject object;
                     try {
-
                         object = new JSONObject(response.body());
-                        Log.e("message",object.getString("message"));
-
                         if (object.getBoolean("status")) {
-
-            //                Util.hideDialog();
-                            JSONObject vendorSetting=object.getJSONObject("listData");
+                            JSONObject vendorSetting = object.getJSONObject("listData");
                             toolbar.setTitle(vendorSetting.getString("shop_name"));
-
-
-
                         } else {
                             Util.hideDialog();
-                            Util.show(mContext, "something is wrong");
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
                         Util.hideDialog();
-
                     }
-
-
                 }
 
                 @Override
                 public void onFailure(@NotNull Call<String> call, @NotNull Throwable t) {
-
                     try {
                         t.printStackTrace();
                     } catch (Exception e) {
@@ -168,7 +136,6 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
     }
 
     public void init() {
-
         llRoot = findViewById(R.id.llRoot);
         menuList = findViewById(R.id.menuList);
         tvName = findViewById(R.id.tvName);
@@ -177,11 +144,8 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
         tvMobile = findViewById(R.id.tvMobile);
         tvNameWlc = findViewById(R.id.tvNameWlc);
 
-
         if (login.getMasterCatId().equalsIgnoreCase("1")) {
-
             arrItems = (HomeActivity.this.getResources().getStringArray(R.array.arr_nav_service_items));
-            //Intent mv2 = new Intent(mContext, PlanService.class);
             loadFragment(new vendorservices(), "Service");
         } else {
             arrItems = (HomeActivity.this.getResources().getStringArray(R.array.arr_nav_e_com_items));
@@ -191,7 +155,6 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
         menuList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         menuListAdapter = new MenuListAdapter(arrItems, this, mContext);
         menuList.setAdapter(menuListAdapter);
-
 
         sideMenuList.setHasFixedSize(true);
         sideMenuList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -210,12 +173,7 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 super.onDrawerSlide(drawerView, slideOffset);
-
-//                float slideX = drawerView.getWidth() * slideOffset;
-//                content.setTranslationX(slideX);
-
                 float scaleFactor = 80f;
-
                 float slideX = drawerView.getWidth() * slideOffset;
                 llRoot.setTranslationX(slideX);
                 llRoot.setScaleX(1 - (slideOffset / scaleFactor));
@@ -230,67 +188,42 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
             Logout();
         });
         FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(new OnCompleteListener<String>() {
-                    @Override
-                    public void onComplete(@NonNull Task<String> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w("TAG", "Fetching FCM registration token failed", task.getException());
-                            return;
-                        }
-
-                        // Get new FCM registration token
-                        token = task.getResult();
-                        UpdateNotification();
-                        // Log and toast
-                        Log.e("msg_token_fmt", token);
-                        Toast.makeText(HomeActivity.this, token, Toast.LENGTH_SHORT).show();
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w("TAG", "Fetching FCM registration token failed", task.getException());
+                        return;
                     }
+                    // Get new FCM registration token
+                    token = task.getResult();
+                    UpdateNotification();
                 });
     }
 
-
-
-    private  void UpdateNotification(){
+    private void UpdateNotification() {
         if (InternetConnection.checkConnection(mContext)) {
-            Util.showDialog("Please wait..",mContext);
+            Util.showDialog("Please wait..", mContext);
             Map<String, String> params = new HashMap<>();
             params.put("user_id", login.getUser_id());
             params.put("notification_token", token);
 
-
-            Log.e("vendor_id",params.toString());
-            RestClient.post().updateNotification(ApiService.APP_DEVICE_ID,login.getSk(),params).enqueue(new Callback<String>() {
+            RestClient.post().updateNotification(ApiService.APP_DEVICE_ID, login.getSk(), params).enqueue(new Callback<String>() {
                 @Override
                 public void onResponse(@NotNull Call<String> call, Response<String> response) {
-                    Gson gson = new Gson();
-                    JSONObject object = null;
+                    JSONObject object;
                     try {
 
                         object = new JSONObject(response.body());
-                        Log.e("message",object.getString("message"));
+                        Log.e("message", object.getString("message"));
 
-                        if (object.getBoolean("status")) {
-
-                            Util.show(mContext,"Successfully updated your setting data");
-
-
-                            Util.hideDialog();
-                        } else {
-                            Util.hideDialog();
-                            Util.show(mContext, "something is wrong");
-                        }
+                        Util.hideDialog();
                     } catch (JSONException e) {
                         e.printStackTrace();
                         Util.hideDialog();
-
                     }
-
-
                 }
 
                 @Override
                 public void onFailure(@NotNull Call<String> call, @NotNull Throwable t) {
-
                     try {
                         t.printStackTrace();
                     } catch (Exception e) {
@@ -299,22 +232,21 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
                     Util.hideDialog();
                 }
             });
-
         }
     }
+
     // Logout Function ///////////
     private void Logout() {
         DialogInterface.OnClickListener dialogClickListener = (dialog, which) -> {
             switch (which) {
                 case DialogInterface.BUTTON_POSITIVE:
                     try {
-                        new SqliteDatabase(mContext).removeLoginUser();
                         voidLogout();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    startActivity(new Intent(HomeActivity.this, Login.class));
-                    finish();
+                    /*startActivity(new Intent(HomeActivity.this, Login.class));
+                    finish();*/
                     break;
 
                 case DialogInterface.BUTTON_NEGATIVE:
@@ -338,25 +270,20 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
 
     @Override
     public void onOptionClick(String liveTest, int pos) {
-
-        //Log.e("post",String.valueOf(pos));
+        menuListAdapter.select=pos;
+        menuListAdapter.notifyDataSetChanged();
         switch (pos) {
-
             case 0:
-
                 if (login.getMasterCatId().equalsIgnoreCase("1")) {
                     loadFragment(new vendorservices(), "Home");
                 } else {
                     loadFragment(new Home(), "Home");
                 }
-
                 break;
             case 1:
                 if (login.getMasterCatId().equalsIgnoreCase("1")) {
                     loadFragment(new BookingService(), "Home");
                 } else {
-                    Toast.makeText(mContext, liveTest + "Can't find current address, " + pos, Toast.LENGTH_SHORT).show();
-
                     loadFragment(new Order(), "Home");
                 }
                 break;
@@ -372,10 +299,7 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
 
                 break;
             case 4:
-
                 loadFragment(new payment(), "payment");
-                //loadFragment(new Inbox(), "inbox");
-
                 break;
             case 5:
                 loadFragment(new offer(), "offer");
@@ -383,34 +307,23 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
             case 6:
                 loadFragment(new coupons(), "offer");
                 break;
-
-
         }
 
     }
 
     @Override
     public void onSideMenuClick(String liveTest, int pos) {
-        if(pos==0){
+        if (pos == 0) {
             Intent mv2 = new Intent(HomeActivity.this, VendorActivity.class);
             startActivity(mv2);
-        }else{
-
         }
     }
 
-
-    public void voidLogout(){
+    public void voidLogout() {
         if (InternetConnection.checkConnection(mContext)) {
-
-
             Map<String, String> params = new HashMap<>();
             params.put("userId", login.getUser_id());
-
-
-            Util.showDialog("Please wait..",mContext);
-
-
+            Util.showDialog("Please wait..", mContext);
             // Calling JSON
             Call<String> call = RestClient.post().logoutUser("1234", login.getSk(), params);
 
@@ -421,19 +334,13 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
                     if (response.isSuccessful()) {
                         assert response.body() != null;
                         try {
-
-
-                            Log.e("datares",response.body());
-                            JSONObject object=new JSONObject(response.body());
-                            if(object.getBoolean("status")){
-
+                            JSONObject object = new JSONObject(response.body());
+                            if (object.getBoolean("status")) {
+                                new SqliteDatabase(mContext).removeLoginUser();
                                 startActivity(new Intent(mContext, Login.class));
                                 finish();
-
-                                Util.hideDialog();
-                            }else{
-                                Util.show(mContext,object.getString("message"));
-                                Util.hideDialog();
+                            } else {
+                                Util.show(mContext, object.getString("message"));
                             }
                             Util.hideDialog();
                         } catch (Exception e) {
@@ -465,6 +372,4 @@ public class HomeActivity extends AppCompatActivity implements MenuListAdapter.O
             Toast.makeText(mContext, R.string.string_internet_connection_not_available, Toast.LENGTH_SHORT).show();
         }
     }
-
-
 }

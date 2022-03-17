@@ -3,7 +3,7 @@ package com.dbcorp.vendorapp.adapter;
 /**
  * Created by Bhupesh Sen on 26-01-2021.
  */
- 
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dbcorp.vendorapp.R;
 import com.dbcorp.vendorapp.model.PaymentRequestModel;
-import com.dbcorp.vendorapp.model.WalletsData;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textview.MaterialTextView;
 
@@ -27,15 +26,17 @@ public class PaymentRequestAdapter extends RecyclerView.Adapter<PaymentRequestAd
     private ArrayList<PaymentRequestModel> listData;
     private ArrayList<PaymentRequestModel> searchArray;
 
-    private final OnMeneuClickListnser onMenuListClicklistener;
+    private OnMeneuClickListnser onMenuListClicklistener;
     Context mContext;
+
     public PaymentRequestAdapter(ArrayList<PaymentRequestModel> getListData, OnMeneuClickListnser onLiveTestClickListener, Context context) {
         this.listData = getListData;
-        this.searchArray=new ArrayList<>();
+        this.searchArray = new ArrayList<>();
         this.onMenuListClicklistener = onLiveTestClickListener;
         this.searchArray.addAll(getListData);
-        this.mContext=context;
+        this.mContext = context;
     }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,16 +47,16 @@ public class PaymentRequestAdapter extends RecyclerView.Adapter<PaymentRequestAd
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        PaymentRequestModel data=listData.get(position);
+        PaymentRequestModel data = listData.get(position);
 
-        holder.tvTransaction.setText(data.getRemark());
-        holder.tvRemark.setText("");
-        holder.tvAmount.setText("");
+        holder.tvTransaction.setText(data.getCreateDate());
+        holder.tvRemark.setText(data.getRemark());
+        holder.tvAmount.setText(data.getAmount());
 
         holder.payMode.setText("");
 
-        holder.cardView.setOnClickListener(v->{
-          onMenuListClicklistener.onOptionClick(data,position);
+        holder.cardView.setOnClickListener(v -> {
+            onMenuListClicklistener.onOptionClick(data, position);
         });
 
 
@@ -105,23 +106,25 @@ public class PaymentRequestAdapter extends RecyclerView.Adapter<PaymentRequestAd
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         MaterialCardView cardView;
-        MaterialTextView tvTransaction,tvRemark,tvAmount,payMode;
-         MyViewHolder(View view) {
+        MaterialTextView tvTransaction, tvRemark, tvAmount, payMode;
+
+        MyViewHolder(View view) {
             super(view);
 
-             tvTransaction=view.findViewById(R.id.tvTransaction);
-             cardView=view.findViewById(R.id.cardView);
-             tvRemark=view.findViewById(R.id.tvRemark);
-             tvAmount=view.findViewById(R.id.tvAmount);
-             payMode=view.findViewById(R.id.payMode);
+            tvTransaction = view.findViewById(R.id.tvTransaction);
+            cardView = view.findViewById(R.id.cardView);
+            tvRemark = view.findViewById(R.id.tvRemark);
+            tvAmount = view.findViewById(R.id.tvAmount);
+            payMode = view.findViewById(R.id.payMode);
 
         }
     }
-    public interface OnMeneuClickListnser{
+
+    public interface OnMeneuClickListnser {
         void onOptionClick(PaymentRequestModel data, int pos);
     }
 
 
- }
+}
 
 

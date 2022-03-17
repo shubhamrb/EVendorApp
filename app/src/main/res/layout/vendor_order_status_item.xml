@@ -170,7 +170,7 @@ android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:id="@+id/tvPrice"
 
-                    android:text="23"
+                    android:text="00"
                     android:layout_gravity="center|start"
                     android:gravity="center|end"
 
@@ -188,7 +188,7 @@ android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:id="@+id/tvTotalPrice"
 
-                    android:text="23"
+                    android:text="00"
                     android:layout_gravity="center|start"
                     android:gravity="center|end"
 

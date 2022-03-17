@@ -12,6 +12,7 @@ public class Constants {
     static final String GET_CITY="get-city";
     static final String GET_PRODUCT="get-product";
     static final String GET_HOME="get-home";
+    static final String CHANGE_SHOP_STATUS="shop-on-off";
     static final String GET_SUB_CAT="get-sub-category";
     static final String ADD_OFFER="add-offer";
 
@@ -39,6 +40,7 @@ public class Constants {
     static final String CHANGE_SERVICE_STATUS="change-service-status";
     static final String ADD_PRODUCT="add-product";
     static final String ADD_PRICE_CHANGE="add-price";
+    static final String PRODUCT_REQUEST="product-request";
 
     static final String PRODUCT_SWITCH="product-on-off";
 
@@ -70,6 +72,7 @@ public class Constants {
     static final String  GET_WALLET="get-wallet";
     static final String  Add_Payment_Request="add-payment-request";
     static final String  Get_Payment_Request="get-payment-request";
+    static final String  Get_Product_Request="get-product-request";
 
 
 

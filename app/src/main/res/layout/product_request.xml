@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/openpanel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="top"
+    android:layout_margin="0sp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="0sp"
+    app:cardElevation="0.1sp"
+    app:contentPadding="0sp"
+    app:rippleColor="@color/colorPrimary">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:background="@color/colorPrimary"
+            android:gravity="top|right"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4.5"
+                android:padding="@dimen/Margin15dp"
+                android:text="Product Request"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Margin15dp"
+
+                app:fontFamily="@font/montserrat_b" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/closeImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:layout_gravity="start"
+                    android:background="@drawable/ic_close_black_24dp"
+                    android:backgroundTint="@color/white"
+                    android:padding="@dimen/Margin5dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </LinearLayout>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="@dimen/Margin10dp"
+            android:layout_marginEnd="@dimen/Margin10dp"
+            android:alpha=".7"
+            android:gravity="center|start"
+            android:padding="@dimen/Margin5dp"
+            android:text="Category name*"
+            android:textColor="@color/black"
+            android:textSize="@dimen/Margin15dp"
+            app:fontFamily="@font/montserrat"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tvCategoryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ten"
+            android:layout_marginEnd="@dimen/ten"
+            android:background="@drawable/white_stroke_gray"
+            android:hint="Category name"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textSize="@dimen/text_size_edit" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="@dimen/Margin10dp"
+            android:layout_marginEnd="@dimen/Margin10dp"
+            android:alpha=".7"
+            android:gravity="center|start"
+            android:padding="@dimen/Margin5dp"
+            android:text="Photo"
+            android:textColor="@color/black"
+            android:textSize="@dimen/Margin15dp"
+            app:fontFamily="@font/montserrat"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ten"
+            android:layout_marginEnd="@dimen/ten"
+            android:background="@drawable/white_stroke_gray">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img"
+                android:layout_width="@dimen/Margin50dp"
+                android:layout_height="@dimen/Margin50dp"
+                android:layout_marginStart="12dp"
+                android:paddingTop="@dimen/Margin5dp"
+                android:paddingEnd="@dimen/Margin5dp"
+                android:paddingBottom="@dimen/Margin5dp"
+                android:src="@drawable/ic_photo_camera_black_48dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/img"
+                android:gravity="center_vertical"
+                android:hint="Photo"
+                android:inputType="number"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:textSize="@dimen/text_size_edit" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="@dimen/Margin10dp"
+            android:layout_marginEnd="@dimen/Margin10dp"
+            android:alpha=".7"
+            android:gravity="center|start"
+            android:padding="@dimen/Margin5dp"
+            android:text="Product/Title Name*"
+            android:textColor="@color/black"
+            android:textSize="@dimen/Margin15dp"
+            app:fontFamily="@font/montserrat"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tvProductName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ten"
+            android:layout_marginEnd="@dimen/ten"
+            android:background="@drawable/white_stroke_gray"
+            android:hint="Product/Title Name"
+            android:maxLength="6"
+            android:padding="16dp"
+            android:textSize="@dimen/text_size_edit" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="@dimen/Margin10dp"
+            android:layout_marginEnd="@dimen/Margin10dp"
+            android:alpha=".7"
+            android:gravity="center|start"
+            android:padding="@dimen/Margin5dp"
+            android:text="Description"
+            android:textColor="@color/black"
+            android:textSize="@dimen/Margin15dp"
+            app:fontFamily="@font/montserrat"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_des"
+            android:layout_width="match_parent"
+            android:layout_height="120sp"
+            android:layout_gravity="top"
+            android:layout_marginStart="@dimen/ten"
+            android:layout_marginEnd="@dimen/ten"
+            android:background="@drawable/white_stroke_gray"
+            android:gravity="top"
+            android:hint="Description"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textSize="@dimen/text_size_edit"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/Margin15dp"
+            android:background="@drawable/btn_bg"
+            android:fontFamily="@font/montserrat_b"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+
+            android:textSize="@dimen/text_size_edit" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
